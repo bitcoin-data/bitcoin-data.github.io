@@ -4,14 +4,11 @@ tags = ["mining", "pools", "coinbase", "addresses", "mainnet", "signet", "json"]
 author = "0xB10C and contributors"
 license = "MIT"
 description = """
-One JSON file per known Bitcoin mining pool with the coinbase tags and the
-coinbase output addresses the pool is known to use, plus its name and website,
-for mainnet and separately for signet. The files are maintained by hand from
-pool announcements and observed coinbases, checked by CI, and combined into
-generated pools.json files on a separate branch for consumption by downstream
-tools. It is useful for attributing blocks to pools in hashrate and block
-analyses; attribution is based on heuristics and some pools change tags or
-addresses or share infrastructure, so results carry some uncertainty.
+Known Bitcoin mining pools with their coinbase tags and coinbase output
+addresses, one JSON file per pool, for mainnet and signet. Maintained by hand
+from pool announcements and observed coinbases, with combined files generated
+for downstream tools. Useful for attributing blocks to pools; attribution is
+heuristic, and pools change tags, addresses and infrastructure.
 """
 
 [[links]]

@@ -4,15 +4,12 @@ tags = ["blocks", "headers", "forks", "consensus", "mainnet", "jsonl"]
 author = "0xB10C and contributors"
 license = "CC0 1.0 (data), MIT (code)"
 description = """
-One JSON record per header hash of a block that has valid proof of work but
-fails a named Bitcoin consensus rule, with the header, the failure reason,
-observations with provenance and, where available, the full block or a
-transaction proof. Records are recovered from the Bitcoin P2P network, from
-chains that merge-mine with Bitcoin and from archived block explorers, and CI
-verifies the header, the proof of work and the rule-specific evidence of every
-record. It is useful for studying consensus failures, pool behaviour and
-historical incidents; blocks that are only reported as invalid without
-established evidence are kept in a separate file.
+Bitcoin blocks with valid proof of work that fail a named consensus rule, one
+JSON record per header with the failure reason, evidence and observations.
+Records come from the P2P network, merge-mined chains and archived block
+explorers, and CI verifies each record's proof of work and evidence. Useful
+for studying consensus failures and historical incidents; blocks only reported
+as invalid are kept in a separate file.
 """
 
 [[links]]

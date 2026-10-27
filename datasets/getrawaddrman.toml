@@ -4,14 +4,12 @@ tags = ["p2p", "addrman", "addresses", "nodes", "mainnet", "json"]
 author = "0xB10C"
 license = "CC0 1.0"
 description = """
-Daily exports of the address manager of two Bitcoin Core nodes as returned by
-the getrawaddrman RPC, one JSON file per node with every known peer address,
-its network, services, source and timestamp, with the history of all earlier
-exports in the git log. The files are fetched nightly from the demo.peer.observer
-nodes by a GitHub Actions workflow and committed to the repository. It is
-useful for studying address propagation, network types, autonomous systems and
-churn in the addrman over time; the two nodes are a small sample and their
-addrman contents depend on their own connectivity.
+Daily exports of the address manager of Bitcoin Core nodes via the
+getrawaddrman RPC, one JSON file per node with every known address and its
+metadata, with history in the git log. A scheduled job fetches the exports
+from the peer.observer nodes and commits them. Useful for studying address
+propagation and addrman churn; the nodes are a small sample with their own
+connectivity.
 """
 
 [[links]]

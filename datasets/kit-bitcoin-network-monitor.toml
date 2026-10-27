@@ -5,17 +5,12 @@ author = "Till Neudecker, Matthias Grundmann, Hannes Hartenstein (DSN research g
 license = "CC BY 4.0"
 doi = "10.5281/zenodo.14627525"
 description = """
-Daily snapshots of the Bitcoin mainnet peers connected to the monitoring nodes
-of the DSN research group at KIT since July 2015, one JSON file per day with,
-per peer, the advertised services, protocol version and user agent, the
-autonomous system and country, coarse geolocation, IP version and tunnelling,
-inventory relay rates and delays and ICMP and protocol-level latency. The
-monitor connects to reachable nodes and records what they relay, with the
-methodology described in the group's technical report, and new snapshots are
-added every day. It is useful for studying node population, software versions,
-network topology and transaction and block propagation over a decade; peer IP
-addresses are replaced by identifiers, geolocation is approximate, and only
-peers reachable by the monitor are covered.
+Daily snapshots of the peers connected to KIT's Bitcoin monitoring nodes, one
+JSON file per day with each peer's services, version, user agent, autonomous
+system, coarse location, relay statistics and latency. The monitor connects to
+reachable nodes and records what they relay, following the group's published
+methodology. Useful for studying the node population and propagation over many
+years; peer IP addresses are anonymised.
 """
 
 [[links]]

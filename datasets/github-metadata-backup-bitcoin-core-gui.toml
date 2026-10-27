@@ -4,13 +4,12 @@ tags = ["github", "issues", "pull-requests", "bitcoin-core", "json"]
 author = "0xB10C"
 license = "Not specified; issue and comment text belongs to its GitHub authors"
 description = """
-A backup of all issues, pull requests, reviews and comments of the bitcoin-core/gui
-GitHub repository, where Bitcoin Core GUI changes are developed, stored as one JSON file per issue and per pull request
-as returned by the GitHub API. The backup is refreshed every few hours by an
-automated job, and a browsable mirror is rebuilt nightly from it. It is useful
-for keeping the development history available if GitHub is down or removes
-content, and for analysing review activity offline; items GitHub hides or
-that failed to fetch are listed in state.json.
+A backup of all issues, pull requests, reviews and comments of the bitcoin-
+core/gui GitHub repository, where Bitcoin Core GUI changes are developed, one
+JSON file per issue and pull request as returned by the GitHub API. An
+automated job refreshes the backup, and a browsable mirror is rebuilt from it.
+Useful for keeping the development history available independently of GitHub;
+items GitHub hides or that failed to fetch are listed in state.json.
 """
 
 [[links]]

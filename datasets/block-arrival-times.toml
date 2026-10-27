@@ -4,14 +4,11 @@ tags = ["blocks", "propagation", "timestamps", "mainnet", "csv"]
 author = "0xB10C and contributors"
 license = "CC0 1.0"
 description = """
-Block arrival timestamps with millisecond precision as seen by multiple nodes
-on the Bitcoin mainnet, stored as one CSV file per source with the block
-height, header hash and the time the block arrived at that node. The sources
-are Bitcoin Core debug logs of contributors, processed with the included
-script, and CI checks every timestamp against the block's header time. It is
-useful for measuring block propagation delay, comparing when different nodes
-first saw a block and timing mining events; coverage varies by source and
-period, see the data availability graph in the repository.
+Timestamps at which blocks arrived at various Bitcoin nodes, one CSV file per
+node with height, hash and millisecond arrival time. Contributors extract the
+timestamps from their Bitcoin Core debug logs with the included script, and CI
+checks them against the block header time. Useful for measuring block
+propagation delay; coverage differs by node and period.
 """
 
 [[links]]
