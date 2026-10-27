@@ -210,6 +210,14 @@ def render_dataset_card(d, categories_by_id, root):
 def render_index(datasets, categories, categories_by_id):
     root = "./"
     out = [f"<h1>{e(SITE_NAME)}</h1>", f'<p class="lead">{e(SITE_TAGLINE)}</p>']
+    counts = {c["id"]: sum(1 for d in datasets if d["category"] == c["id"]) for c in categories}
+    toc = "".join(
+        f'<li><a href="#{e(c["id"])}">{e(c["name"])}</a> '
+        f'<span class="count">{counts[c["id"]]}</span></li>'
+        for c in categories
+        if counts[c["id"]]
+    )
+    out.append(f'<nav class="toc" aria-label="Categories"><ul>{toc}</ul></nav>')
     for cat in categories:
         members = [d for d in datasets if d["category"] == cat["id"]]
         if not members:
