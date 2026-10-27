@@ -1,0 +1,26 @@
+name = "Bitnod.es node explorer exports"
+category = "p2p-network"
+tags = ["p2p", "nodes", "crawler", "reachable-nodes", "user-agents", "geolocation", "mainnet", "csv"]
+license = "Not specified"
+description = """
+Exports of reachable Bitcoin nodes from the Bitnod.es node explorer, one CSV
+file per day with each node's address, port, country, ISP, services, protocol
+version, user agent and block height, covering IPv4, IPv6, Tor and I2P
+addresses. The site runs the bitnodes crawler and publishes a cumulative
+last-seen export per day. Useful for node counts by country, provider and
+software version; only listening nodes are included.
+"""
+
+[[links]]
+type = "website"
+url = "https://bitnod.es/"
+
+[[links]]
+type = "download"
+label = "Node explorer with CSV exports"
+url = "https://bitnod.es/node_explorer.php"
+
+[[links]]
+type = "repository"
+label = "bitnodes (crawler code)"
+url = "https://github.com/ayeowch/bitnodes"
