@@ -1,0 +1,30 @@
+name = "P2P network health metrics"
+category = "p2p-network"
+tags = ["p2p", "nodes", "dns-seeds", "reachable-nodes", "mainnet", "csv"]
+author = "virtu"
+license = "AGPL 3.0"
+description = """
+Daily time series since October 2022 on the health of Bitcoin's peer-to-peer
+network: the number of reachable nodes by network type (IPv4, IPv6, Tor, I2P,
+CJDNS), estimates of unique and long-term reachable nodes, and how many of the
+addresses each DNS seed advertises are reachable, stale or duplicates. The
+metrics are produced by virtu's p2p-metrics-exporter, which crawls the network
+and queries the DNS seeds, and were committed automatically once a day. The
+series are useful for tracking node counts and DNS seed quality over time;
+reachable-node counts only cover listening nodes, and the exporter stopped
+committing in November 2025.
+"""
+
+[[links]]
+type = "repository"
+url = "https://github.com/bitcoin-data/virtu-p2p-metrics"
+
+[[links]]
+type = "download"
+label = "p2p_reachable_node_count.csv"
+url = "https://raw.githubusercontent.com/bitcoin-data/virtu-p2p-metrics/master/p2p_reachable_node_count.csv"
+
+[[links]]
+type = "download"
+label = "dns_seed_summary.csv"
+url = "https://raw.githubusercontent.com/bitcoin-data/virtu-p2p-metrics/master/dns_seed_summary.csv"
