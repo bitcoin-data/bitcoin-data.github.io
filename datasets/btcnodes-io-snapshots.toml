@@ -1,0 +1,33 @@
+name = "BTC Nodes (btcnodes.io) reachable node snapshots"
+category = "p2p-network"
+tags = ["p2p", "nodes", "crawler", "reachable-nodes", "user-agents", "geolocation", "mainnet", "json"]
+author = "Rodrigo Martínez (brunneis)"
+license = "Not specified (crawler code MIT)"
+description = """
+Snapshots of reachable Bitcoin nodes from a revival of the bitnodes.io
+crawler, each a JSON document listing every node with version, user agent,
+services and height across IPv4, IPv6, Tor, I2P and CJDNS, with monthly
+archives adding geolocation and ASN. The crawler recursively requests
+addresses from nodes and publishes snapshots through a rate-limited public API
+and an archive page. Useful for node counts by network, country and software;
+only listening nodes are counted.
+"""
+
+[[links]]
+type = "website"
+url = "https://btcnodes.io/"
+
+[[links]]
+type = "download"
+label = "Snapshot archive"
+url = "https://btcnodes.io/archive/"
+
+[[links]]
+type = "documentation"
+label = "API"
+url = "https://btcnodes.io/api/"
+
+[[links]]
+type = "repository"
+label = "btcnodes (crawler code)"
+url = "https://github.com/brunneis/btcnodes"
