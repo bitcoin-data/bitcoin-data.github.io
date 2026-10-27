@@ -1,0 +1,27 @@
+name = "achow101 DNS seeder crawler dump"
+category = "p2p-network"
+tags = ["p2p", "nodes", "dns-seeds", "crawler", "reachable-nodes", "user-agents", "mainnet", "text"]
+author = "Ava Chow (achow101)"
+license = "Not specified"
+description = """
+The node database of achow101's Bitcoin DNS seeder as a text dump, one line
+per known address with reachability over several time windows, last-seen time,
+height, services, version and user agent. Written continuously by the
+dnsseedrs crawler behind the seeder, which asks nodes for addresses and keeps
+retrying each one. Useful for node counts per network and software adoption; a
+single live snapshot from one vantage point, without history.
+"""
+
+[[links]]
+type = "website"
+url = "https://mainnet.achownodes.xyz/"
+
+[[links]]
+type = "download"
+label = "seeds.txt.gz"
+url = "https://mainnet.achownodes.xyz/seeds.txt.gz"
+
+[[links]]
+type = "repository"
+label = "dnsseedrs (crawler and seeder code)"
+url = "https://github.com/achow101/dnsseedrs"
