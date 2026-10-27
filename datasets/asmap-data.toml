@@ -1,0 +1,45 @@
+name = "ASMap files for Bitcoin Core"
+category = "p2p-network"
+tags = ["p2p", "asmap", "autonomous-systems", "addresses", "routing"]
+format = ["binary", "text"]
+author = "ASMap contributors"
+license = "MIT"
+description = """
+Maps from IP address ranges to autonomous system numbers, encoded for Bitcoin
+Core's asmap option, with one filled and one unfilled binary file per run,
+organised by year, plus a copy of the latest map at the repository root. Each
+map is created collaboratively by several participants from RPKI, IRR and
+routing data using kartograf, and verified and PGP-attested before merging.
+Useful for diversifying peer selection by network operator rather than by
+IP prefix and for studying how Bitcoin nodes are distributed across
+autonomous systems; reproducing a map requires the kartograf version used at
+the time.
+"""
+
+[[links]]
+type = "repository"
+url = "https://github.com/asmap/asmap-data"
+
+[[links]]
+type = "website"
+url = "https://asmap.org/"
+
+[[links]]
+type = "download"
+label = "latest_asmap.dat"
+url = "https://raw.githubusercontent.com/asmap/asmap-data/main/latest_asmap.dat"
+
+[[links]]
+type = "download"
+label = "Raw input files (releases)"
+url = "https://github.com/asmap/asmap-data/releases"
+
+[[links]]
+type = "documentation"
+label = "ASMap creation process"
+url = "https://delvingbitcoin.org/t/asmap-creation-process/548"
+
+[[links]]
+type = "other"
+label = "kartograf (map generator)"
+url = "https://github.com/asmap/kartograf"
