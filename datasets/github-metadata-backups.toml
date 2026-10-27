@@ -1,0 +1,61 @@
+name = "GitHub metadata backups"
+category = "development"
+tags = ["github", "issues", "pull-requests", "bitcoin-core", "bips", "json"]
+author = "0xB10C"
+license = "Not specified; issue and comment text belongs to its GitHub authors"
+description = """
+Backups of all issues, pull requests, reviews and comments of the
+bitcoin/bitcoin, bitcoin-core/gui, bitcoin-core/secp256k1 and bitcoin/bips
+GitHub repositories, stored as one JSON file per issue and per pull request as
+returned by the GitHub API. The backups are refreshed every few hours by an
+automated job and a browsable mirror of each repository is rebuilt nightly
+from them. They are useful for keeping the development history available if
+GitHub is down or removes content, and for analysing review activity offline;
+items GitHub hides or that failed to fetch are listed in each repository's
+state.json.
+"""
+
+[[links]]
+type = "repository"
+label = "bitcoin/bitcoin backup"
+url = "https://github.com/bitcoin-data/github-metadata-backup-bitcoin-bitcoin"
+
+[[links]]
+type = "repository"
+label = "bitcoin-core/gui backup"
+url = "https://github.com/bitcoin-data/github-metadata-backup-bitcoin-core-gui"
+
+[[links]]
+type = "repository"
+label = "bitcoin-core/secp256k1 backup"
+url = "https://github.com/bitcoin-data/github-metadata-backup-bitcoin-core-secp256k1"
+
+[[links]]
+type = "repository"
+label = "bitcoin/bips backup"
+url = "https://github.com/bitcoin-data/github-metadata-backup-bitcoin-bips"
+
+[[links]]
+type = "website"
+label = "bitcoin/bitcoin mirror"
+url = "https://bitcoin-data.github.io/github-metadata-backup-bitcoin-bitcoin/"
+
+[[links]]
+type = "website"
+label = "bitcoin-core/gui mirror"
+url = "https://bitcoin-data.github.io/github-metadata-backup-bitcoin-core-gui/"
+
+[[links]]
+type = "website"
+label = "bitcoin-core/secp256k1 mirror"
+url = "https://bitcoin-data.github.io/github-metadata-backup-bitcoin-core-secp256k1/"
+
+[[links]]
+type = "website"
+label = "bitcoin/bips mirror"
+url = "https://bitcoin-data.github.io/github-metadata-backup-bitcoin-bips/"
+
+[[links]]
+type = "documentation"
+label = "github-metadata-backup tool"
+url = "https://github.com/0xB10C/github-metadata-backup"
