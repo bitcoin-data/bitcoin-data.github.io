@@ -1,6 +1,7 @@
 name = "Non-standard transactions"
 category = "transactions"
-tags = ["transactions", "mempool", "policy", "mining", "mainnet", "csv"]
+tags = ["transactions", "mempool", "policy", "mining", "mainnet"]
+format = ["csv"]
 author = "0xB10C"
 license = "CC0 1.0"
 description = """

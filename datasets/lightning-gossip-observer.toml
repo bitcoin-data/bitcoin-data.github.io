@@ -1,6 +1,7 @@
 name = "Lightning Network gossip capture (gossip-observer)"
 category = "lightning"
-tags = ["p2p", "gossip", "propagation", "timestamps", "mainnet", "parquet"]
+tags = ["p2p", "gossip", "propagation", "timestamps", "mainnet"]
+format = ["parquet"]
 author = "Jonathan Harvey-Buschel (Chaincode Labs)"
 license = "CC BY 4.0"
 doi = "10.5281/zenodo.23111325"

@@ -1,6 +1,7 @@
 name = "BTC Nodes (btcnodes.io) reachable node snapshots"
 category = "p2p-network"
-tags = ["p2p", "nodes", "crawler", "reachable-nodes", "user-agents", "geolocation", "mainnet", "json"]
+tags = ["p2p", "nodes", "crawler", "reachable-nodes", "user-agents", "geolocation", "mainnet"]
+format = ["json"]
 author = "Rodrigo Martínez (brunneis)"
 license = "Not specified (crawler code MIT)"
 description = """

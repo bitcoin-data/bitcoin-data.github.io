@@ -1,6 +1,7 @@
 name = "Block arrival times"
 category = "p2p-network"
-tags = ["blocks", "propagation", "timestamps", "mainnet", "csv"]
+tags = ["blocks", "propagation", "timestamps", "mainnet"]
+format = ["csv"]
 author = "0xB10C and contributors"
 license = "CC0 1.0"
 description = """

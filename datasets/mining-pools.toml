@@ -1,6 +1,7 @@
 name = "Mining pools"
 category = "mining"
-tags = ["mining", "pools", "coinbase", "addresses", "mainnet", "signet", "json"]
+tags = ["mining", "pools", "coinbase", "addresses", "mainnet", "signet"]
+format = ["json"]
 author = "0xB10C and contributors"
 license = "MIT"
 description = """

@@ -1,6 +1,7 @@
 name = "Lightning Network topology gossip datasets (lnresearch)"
 category = "lightning"
 tags = ["gossip", "topology", "channels", "p2p", "mainnet"]
+format = ["binary"]
 author = "Christian Decker (lnresearch)"
 license = "MIT (repository); no separate data license stated"
 doi = "10.5281/zenodo.4088530"

@@ -27,7 +27,8 @@ follow. By hand:
 | ------------- | -------- | ----------- |
 | `name`        | yes      | Display name of the dataset. |
 | `category`    | yes      | One of the ids in [`categories.toml`](./categories.toml). |
-| `tags`        | no       | List of lowercase kebab-case tags, e.g. `["blocks", "mainnet", "csv"]`. Reuse existing tags where possible, see the [tags page](https://bitcoin-data.github.io/tags/). |
+| `tags`        | no       | List of lowercase kebab-case tags, e.g. `["blocks", "mainnet"]`. Reuse existing tags where possible, see the [tags page](https://bitcoin-data.github.io/tags/). |
+| `format`      | yes      | List of data formats: `csv`, `json`, `jsonl`, `parquet`, `sqlite`, `text`, `binary`. |
 | `description` | yes      | Three short sentences, see below. |
 | `links`       | yes      | One or more `[[links]]` tables with `type`, `url` and an optional `label`. Types: `repository`, `website`, `download`, `documentation`, `paper`, `other`. |
 | `license`     | yes      | Free text, e.g. `CC0 1.0` or `CC0 1.0 (data), MIT (code)`. |
@@ -53,7 +54,8 @@ nobody updates them. Describe what the dataset is, not how big it is today.
 ```toml
 name = "Stale blocks"
 category = "blocks"
-tags = ["blocks", "headers", "forks", "mainnet", "csv"]
+tags = ["blocks", "headers", "forks", "mainnet"]
+format = ["csv", "binary"]
 author = "0xB10C and contributors"
 license = "CC0 1.0 (data), MIT (code)"
 doi = "10.5281/zenodo.22667157"

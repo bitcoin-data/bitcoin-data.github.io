@@ -1,6 +1,7 @@
 name = "getrawaddrman exports"
 category = "p2p-network"
-tags = ["p2p", "addrman", "addresses", "nodes", "mainnet", "json"]
+tags = ["p2p", "addrman", "addresses", "nodes", "mainnet"]
+format = ["json"]
 author = "0xB10C"
 license = "CC0 1.0"
 description = """

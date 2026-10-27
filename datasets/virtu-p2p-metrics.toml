@@ -1,6 +1,7 @@
 name = "P2P network health metrics"
 category = "p2p-network"
-tags = ["p2p", "nodes", "dns-seeds", "reachable-nodes", "mainnet", "csv"]
+tags = ["p2p", "nodes", "dns-seeds", "reachable-nodes", "mainnet"]
+format = ["csv"]
 author = "virtu"
 license = "AGPL 3.0"
 description = """

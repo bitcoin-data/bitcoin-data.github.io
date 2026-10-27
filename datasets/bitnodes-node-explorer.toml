@@ -1,6 +1,7 @@
 name = "Bitnod.es node explorer exports"
 category = "p2p-network"
-tags = ["p2p", "nodes", "crawler", "reachable-nodes", "user-agents", "geolocation", "mainnet", "csv"]
+tags = ["p2p", "nodes", "crawler", "reachable-nodes", "user-agents", "geolocation", "mainnet"]
+format = ["csv"]
 license = "Not specified"
 description = """
 Exports of reachable Bitcoin nodes from the Bitnod.es node explorer, one CSV

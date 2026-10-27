@@ -34,7 +34,7 @@ Read the dataset's own sources before writing anything. Typically:
 Only state facts you verified. If something is unknown, leave the optional
 field out or say so in the description rather than guessing.
 
-### 2. Pick a slug, a category and tags
+### 2. Pick a slug, a category, tags and formats
 
 - Slug: lowercase kebab-case, usually the repository name, e.g. `stale-blocks`.
   It becomes the file name `datasets/<slug>.toml` and the URL `/datasets/<slug>/`.
@@ -45,9 +45,12 @@ field out or say so in the description rather than guessing.
   python3 build.py --tags
   ```
 
-  Good tags describe the subject (`blocks`, `p2p`, `mining`), the network
-  (`mainnet`, `signet`) and the format (`csv`, `json`, `jsonl`). Use three to
-  seven tags. Tags are lowercase kebab-case.
+  Good tags describe the subject (`blocks`, `p2p`, `mining`) and the network
+  (`mainnet`, `signet`). Use three to seven tags. Tags are lowercase
+  kebab-case. The data format is not a tag; it goes in the `format` field.
+- Format: one or more of `csv`, `json`, `jsonl`, `parquet`, `sqlite`, `text`,
+  `binary`, describing the files a user downloads. Ask the maintainers before
+  adding a format to `FORMATS` in `build.py`.
 
 ### 3. Write the entry
 
@@ -59,6 +62,7 @@ the fields:
 | `name`        | yes      | Display name, sentence case, e.g. `Stale blocks`. |
 | `category`    | yes      | Category id from `categories.toml`. |
 | `tags`        | no       | List of tags, see above. |
+| `format`      | yes      | List of data formats, see above. |
 | `description` | yes      | Three short sentences, see below. |
 | `links`       | yes      | One or more `[[links]]` tables. |
 | `license`     | yes      | Free text. Name the data license and, if different, the code license, e.g. `CC0 1.0 (data), MIT (code)`. If there is no license, write `Not specified`. |

@@ -1,6 +1,7 @@
 name = "bitcoin.fish.foo DNS seeder crawler dump"
 category = "p2p-network"
-tags = ["p2p", "nodes", "dns-seeds", "crawler", "reachable-nodes", "user-agents", "mainnet", "text"]
+tags = ["p2p", "nodes", "dns-seeds", "crawler", "reachable-nodes", "user-agents", "mainnet"]
+format = ["text"]
 author = "Will Clark (willcl-ark)"
 license = "Not specified"
 description = """

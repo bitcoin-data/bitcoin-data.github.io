@@ -40,6 +40,17 @@ LINK_TYPES = {
     "other": "Link",
 }
 
+# Data formats, with their display labels.
+FORMATS = {
+    "csv": "CSV",
+    "json": "JSON",
+    "jsonl": "JSON Lines",
+    "parquet": "Parquet",
+    "sqlite": "SQLite",
+    "text": "Plain text",
+    "binary": "Binary",
+}
+
 SLUG_RE = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 DOI_RE = re.compile(r"^10\.\d{4,9}/\S+$")
 
@@ -86,7 +97,7 @@ def load_dataset(path, category_ids):
         raise EntryError(f"{where}: filename must be lowercase kebab-case")
     entry = load_toml(path)
 
-    known = {"name", "category", "tags", "description", "links", "license", "doi", "author"}
+    known = {"name", "category", "tags", "format", "description", "links", "license", "doi", "author"}
     unknown = set(entry) - known
     if unknown:
         raise EntryError(f"{where}: unknown field(s): {', '.join(sorted(unknown))}")
@@ -114,9 +125,23 @@ def load_dataset(path, category_ids):
     for tag in tags:
         if not SLUG_RE.match(tag):
             raise EntryError(f"{where}: tag {tag!r} must be lowercase kebab-case")
+        if tag in FORMATS:
+            raise EntryError(f"{where}: {tag!r} is a data format, put it in 'format' instead of 'tags'")
     if len(set(tags)) != len(tags):
         raise EntryError(f"{where}: duplicate tags")
     dataset["tags"] = sorted(tags)
+
+    formats = entry.get("format")
+    if not isinstance(formats, list) or not formats or not all(isinstance(f, str) for f in formats):
+        raise EntryError(f"{where}: 'format' must be a non-empty list of strings")
+    for fmt in formats:
+        if fmt not in FORMATS:
+            raise EntryError(
+                f"{where}: unknown format {fmt!r}, expected one of: {', '.join(FORMATS)}"
+            )
+    if len(set(formats)) != len(formats):
+        raise EntryError(f"{where}: duplicate formats")
+    dataset["format"] = formats
 
     links = entry.get("links")
     if not isinstance(links, list) or not links:
@@ -167,6 +192,10 @@ def first_sentence(text):
     return m.group(1) if m else text
 
 
+def format_labels(d):
+    return ", ".join(FORMATS[f] for f in d["format"])
+
+
 def render_tags(tags, root):
     if not tags:
         return ""
@@ -186,6 +215,7 @@ def render_links(links):
 def render_dataset_card(d, categories_by_id, root):
     meta = [
         f'<li><span class="label">Category:</span> {e(categories_by_id[d["category"]]["name"])}</li>',
+        f'<li><span class="label">Format:</span> {e(format_labels(d))}</li>',
         f'<li><span class="label">License:</span> {e(d["license"])}</li>',
     ]
     if d["author"]:
@@ -238,6 +268,7 @@ def render_dataset_page(d, categories_by_id):
     cat = categories_by_id[d["category"]]
     rows = [
         ("Category", f'<a href="{root}#{e(cat["id"])}">{e(cat["name"])}</a>'),
+        ("Format", e(format_labels(d))),
         ("License", e(d["license"])),
     ]
     if d["author"]:
@@ -329,6 +360,7 @@ def dataset_jsonld(d, categories_by_id):
         "url": dataset_url(d),
         "license": d["license"],
         "keywords": [categories_by_id[d["category"]]["name"], *d["tags"]],
+        "encodingFormat": [FORMATS[f] for f in d["format"]],
         "isAccessibleForFree": True,
         "includedInDataCatalog": {"@type": "DataCatalog", "name": SITE_NAME, "url": BASE_URL},
     }
@@ -388,6 +420,7 @@ def render_llms_full_txt(datasets, categories_by_id):
         out.append("")
         out.append(f"URL: {dataset_url(d)}")
         out.append(f"Category: {categories_by_id[d['category']]['name']}")
+        out.append(f"Format: {format_labels(d)}")
         if d["tags"]:
             out.append(f"Tags: {', '.join(d['tags'])}")
         out.append(f"License: {d['license']}")

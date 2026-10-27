@@ -1,6 +1,7 @@
 name = "Invalid blocks"
 category = "blocks"
-tags = ["blocks", "headers", "forks", "consensus", "mainnet", "jsonl"]
+tags = ["blocks", "headers", "forks", "consensus", "mainnet"]
+format = ["jsonl", "json", "binary"]
 author = "0xB10C and contributors"
 license = "CC0 1.0 (data), MIT (code)"
 description = """

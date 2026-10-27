@@ -1,6 +1,7 @@
 name = "bitcoin-core/secp256k1 GitHub metadata backup"
 category = "development"
-tags = ["github", "issues", "pull-requests", "bitcoin-core", "json"]
+tags = ["github", "issues", "pull-requests", "bitcoin-core"]
+format = ["json"]
 author = "0xB10C"
 license = "Not specified; issue and comment text belongs to its GitHub authors"
 description = """

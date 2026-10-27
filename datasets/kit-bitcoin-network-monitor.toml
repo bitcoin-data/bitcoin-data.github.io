@@ -1,6 +1,7 @@
 name = "Bitcoin network monitor snapshots (KIT DSN)"
 category = "p2p-network"
-tags = ["p2p", "nodes", "latency", "propagation", "user-agents", "mainnet", "json"]
+tags = ["p2p", "nodes", "latency", "propagation", "user-agents", "mainnet"]
+format = ["json"]
 author = "Till Neudecker, Matthias Grundmann, Hannes Hartenstein (DSN research group, KASTEL, KIT)"
 license = "CC BY 4.0"
 doi = "10.5281/zenodo.14627525"
