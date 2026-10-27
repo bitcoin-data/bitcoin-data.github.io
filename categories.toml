@@ -1,0 +1,27 @@
+# Categories, in the order they appear on the index page.
+# Every dataset must use one of the ids listed here.
+
+[[categories]]
+id = "blocks"
+name = "Blocks"
+description = "Datasets about Bitcoin blocks and block headers."
+
+[[categories]]
+id = "transactions"
+name = "Transactions"
+description = "Datasets about Bitcoin transactions and the mempool."
+
+[[categories]]
+id = "p2p-network"
+name = "P2P network"
+description = "Datasets about the Bitcoin peer-to-peer network: nodes, addresses, propagation."
+
+[[categories]]
+id = "mining"
+name = "Mining"
+description = "Datasets about mining pools, hashrate and coinbase data."
+
+[[categories]]
+id = "development"
+name = "Development"
+description = "Datasets about Bitcoin software development: repositories, issues, pull requests."
