@@ -59,25 +59,28 @@ the fields:
 | `name`        | yes      | Display name, sentence case, e.g. `Stale blocks`. |
 | `category`    | yes      | Category id from `categories.toml`. |
 | `tags`        | no       | List of tags, see above. |
-| `description` | yes      | Three sentences, see below. |
+| `description` | yes      | Three short sentences, see below. |
 | `links`       | yes      | One or more `[[links]]` tables. |
 | `license`     | yes      | Free text. Name the data license and, if different, the code license, e.g. `CC0 1.0 (data), MIT (code)`. If there is no license, write `Not specified`. |
 | `author`      | no       | The person, group or project publishing the dataset. |
 | `doi`         | no       | Bare DOI, e.g. `10.5281/zenodo.22667157`. Prefer the concept DOI that resolves to the latest version. |
 
-The description is exactly three sentences. Each answers one question:
+The description is exactly three short sentences, about 50 to 70 words in
+total. Each answers one question:
 
-1. **What is in it?** What one record represents and the scope: network, time
-   range, number of sources, file format.
-2. **Where does it come from?** How the data is collected, by whom, and how
-   often it is updated or checked.
-3. **What is it for, and what is the catch?** One or two typical uses, then the
-   main caveat a user should know before relying on it.
+1. **What is in it?** What one record represents and the file format.
+2. **Where does it come from?** How the data is collected and by whom.
+3. **What is it for, and what is the catch?** A typical use, then the main
+   caveat a user should know.
+
+Descriptions must be timeless. Do not include dates, time ranges, row or file
+counts, sizes, version numbers, update frequencies, or status words such as
+"currently", "since", "recently" or "stopped". These facts change and nobody
+updates them. Describe what the dataset is, not its state today.
 
 Write plainly for someone who knows Bitcoin but not this dataset. No marketing
-language, no "comprehensive" or "powerful". Around 80 to 130 words in total.
-Blank lines inside the description start a new paragraph, but three sentences
-normally fit in one.
+language, no "comprehensive" or "powerful". The index page shows every
+description in full, so keep it short.
 
 Links use these types, in this order of preference: `repository`, `website`,
 `download`, `documentation`, `paper`, `other`. Include the repository, the
