@@ -1,0 +1,34 @@
+name = "Bitcoin network monitor snapshots (KIT DSN)"
+category = "p2p-network"
+tags = ["p2p", "nodes", "latency", "propagation", "user-agents", "mainnet", "json"]
+author = "Till Neudecker, Matthias Grundmann, Hannes Hartenstein (DSN research group, KASTEL, KIT)"
+license = "CC BY 4.0"
+doi = "10.5281/zenodo.14627525"
+description = """
+Daily snapshots of the Bitcoin mainnet peers connected to the monitoring nodes
+of the DSN research group at KIT since July 2015, one JSON file per day with,
+per peer, the advertised services, protocol version and user agent, the
+autonomous system and country, coarse geolocation, IP version and tunnelling,
+inventory relay rates and delays and ICMP and protocol-level latency. The
+monitor connects to reachable nodes and records what they relay, with the
+methodology described in the group's technical report, and new snapshots are
+added every day. It is useful for studying node population, software versions,
+network topology and transaction and block propagation over a decade; peer IP
+addresses are replaced by identifiers, geolocation is approximate, and only
+peers reachable by the monitor are covered.
+"""
+
+[[links]]
+type = "website"
+label = "Bitcoin Network Monitor"
+url = "https://www.dsn.kastel.kit.edu/bitcoin/"
+
+[[links]]
+type = "download"
+label = "Daily snapshots"
+url = "https://www.dsn.kastel.kit.edu/bitcoin/snapshots/"
+
+[[links]]
+type = "documentation"
+label = "Data format"
+url = "https://www.dsn.kastel.kit.edu/bitcoin/data.html"
