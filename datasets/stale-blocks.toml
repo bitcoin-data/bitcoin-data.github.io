@@ -1,0 +1,30 @@
+name = "Stale blocks"
+category = "blocks"
+tags = ["blocks", "headers", "forks", "mainnet", "csv"]
+author = "0xB10C and contributors"
+license = "CC0 1.0 (data), MIT (code)"
+doi = "10.5281/zenodo.22667157"
+description = """
+One row per stale block observed on the Bitcoin mainnet with its height, hash
+and, where known, the raw block header, plus the full block as a binary file
+where one is available. The data is contributed by node operators who export
+their chain tips with Bitcoin Core's getchaintips RPC, supplemented by fork
+monitor and block explorer archives, and every change is checked in CI. It is
+useful for studying the stale-block rate, block propagation and mining
+competition over time; the checks do not reconstruct the UTXO set, so a listed
+block is not guaranteed to be fully consensus-valid, and blocks known to be
+invalid are kept in the invalid-blocks dataset instead.
+"""
+
+[[links]]
+type = "repository"
+url = "https://github.com/bitcoin-data/stale-blocks"
+
+[[links]]
+type = "website"
+url = "https://bitcoin-data.github.io/stale-blocks/"
+
+[[links]]
+type = "download"
+label = "stale-blocks.csv"
+url = "https://raw.githubusercontent.com/bitcoin-data/stale-blocks/master/stale-blocks.csv"
