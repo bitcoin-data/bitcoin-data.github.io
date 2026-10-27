@@ -1,0 +1,28 @@
+name = "Lightning Network topology gossip datasets (lnresearch)"
+category = "lightning"
+tags = ["gossip", "topology", "channels", "p2p", "mainnet"]
+author = "Christian Decker (lnresearch)"
+license = "MIT (repository); no separate data license stated"
+doi = "10.5281/zenodo.4088530"
+description = """
+Snapshots of the Lightning Network's gossip history: the channel_announcement,
+channel_update and node_announcement messages seen on mainnet since August
+2019, published as seven bzip2-compressed files in a simple raw-message format
+dated from October 2020 to September 2023, the latest holding about 36 million
+messages. The messages are extracted from the gossip_store files of the
+authors' c-lightning nodes after deduplication, each file is listed with its
+SHA256 checksum in the README, and a Python snippet shows how to read the
+format. The data is useful for reconstructing the network's topology, channel
+policies and node metadata at any point in time; gossip is deliberately lossy
+and nodes do not retain old messages, so the collection is best effort and
+may miss messages, and the newest snapshot is from September 2023.
+"""
+
+[[links]]
+type = "repository"
+url = "https://github.com/lnresearch/topology"
+
+[[links]]
+type = "documentation"
+label = "File format and dataset table"
+url = "https://github.com/lnresearch/topology#datasets"
