@@ -1,0 +1,34 @@
+name = "getrawaddrman exports"
+category = "p2p-network"
+tags = ["p2p", "addrman", "addresses", "nodes", "mainnet", "json"]
+author = "0xB10C"
+license = "CC0 1.0"
+description = """
+Daily exports of the address manager of two Bitcoin Core nodes as returned by
+the getrawaddrman RPC, one JSON file per node with every known peer address,
+its network, services, source and timestamp, with the history of all earlier
+exports in the git log. The files are fetched nightly from the demo.peer.observer
+nodes by a GitHub Actions workflow and committed to the repository. It is
+useful for studying address propagation, network types, autonomous systems and
+churn in the addrman over time; the two nodes are a small sample and their
+addrman contents depend on their own connectivity.
+"""
+
+[[links]]
+type = "repository"
+url = "https://github.com/bitcoin-data/getrawaddrman"
+
+[[links]]
+type = "download"
+label = "getrawaddrman-hal.json"
+url = "https://raw.githubusercontent.com/bitcoin-data/getrawaddrman/main/getrawaddrman-hal.json"
+
+[[links]]
+type = "download"
+label = "getrawaddrman-len.json"
+url = "https://raw.githubusercontent.com/bitcoin-data/getrawaddrman/main/getrawaddrman-len.json"
+
+[[links]]
+type = "documentation"
+label = "getrawaddrman RPC"
+url = "https://bitcoincore.org/en/doc/latest/rpc/network/getrawaddrman/"
