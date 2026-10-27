@@ -24,6 +24,7 @@ TEMPLATES_DIR = ROOT / "templates"
 STATIC_DIR = ROOT / "static"
 OUT_DIR = ROOT / "site"
 
+BASE_URL = "https://bitcoin-data.github.io/"
 SITE_NAME = "bitcoin-data"
 SITE_TAGLINE = "Collection of public Bitcoin related datasets."
 ORG_URL = "https://github.com/bitcoin-data"
@@ -262,12 +263,37 @@ def render_tag_page(tag, datasets, categories_by_id):
     )
 
 
-def write_page(path, template, *, title, content, root, description=SITE_TAGLINE):
+def page_url(path):
+    """Canonical URL of an output file, with index.html stripped."""
+    rel = path.relative_to(OUT_DIR).as_posix()
+    if rel == "index.html":
+        rel = ""
+    elif rel.endswith("/index.html"):
+        rel = rel[: -len("index.html")]
+    return BASE_URL + rel
+
+
+def write_page(path, template, *, title, content, root, description=SITE_TAGLINE, jsonld=None):
+    url = page_url(path)
+    head = [
+        f'<link rel="canonical" href="{e(url)}">',
+        f'<link rel="alternate" type="application/json" href="{root}datasets.json" title="All datasets as JSON">',
+        f'<meta property="og:type" content="website">',
+        f'<meta property="og:site_name" content="{e(SITE_NAME)}">',
+        f'<meta property="og:title" content="{e(title)}">',
+        f'<meta property="og:description" content="{e(description)}">',
+        f'<meta property="og:url" content="{e(url)}">',
+    ]
+    if jsonld is not None:
+        # </script> cannot occur in JSON that escapes "/" as below.
+        data = json.dumps(jsonld, ensure_ascii=False).replace("</", "<\\/")
+        head.append(f'<script type="application/ld+json">{data}</script>')
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(
         template.substitute(
             title=e(title),
             meta_description=e(description),
+            head_extra="\n".join(head),
             content=content,
             root=root,
             site_name=e(SITE_NAME),
@@ -276,6 +302,101 @@ def write_page(path, template, *, title, content, root, description=SITE_TAGLINE
         ),
         encoding="utf-8",
     )
+
+
+def dataset_url(d):
+    return f"{BASE_URL}datasets/{d['slug']}/"
+
+
+def dataset_jsonld(d, categories_by_id):
+    """schema.org Dataset description, as indexed by Google Dataset Search."""
+    out = {
+        "@context": "https://schema.org",
+        "@type": "Dataset",
+        "name": d["name"],
+        "description": " ".join(d["description"].split()),
+        "url": dataset_url(d),
+        "license": d["license"],
+        "keywords": [categories_by_id[d["category"]]["name"], *d["tags"]],
+        "isAccessibleForFree": True,
+        "includedInDataCatalog": {"@type": "DataCatalog", "name": SITE_NAME, "url": BASE_URL},
+    }
+    if d["author"]:
+        out["creator"] = {"@type": "Person", "name": d["author"]}
+    if d["doi"]:
+        out["identifier"] = f"https://doi.org/{d['doi']}"
+        out["sameAs"] = f"https://doi.org/{d['doi']}"
+    downloads = [l for l in d["links"] if l["type"] == "download"]
+    if downloads:
+        out["distribution"] = [
+            {"@type": "DataDownload", "name": l["label"], "contentUrl": l["url"]} for l in downloads
+        ]
+    others = [l["url"] for l in d["links"] if l["type"] != "download"]
+    if others:
+        out["subjectOf"] = [{"@type": "WebPage", "url": u} for u in others]
+    return out
+
+
+def catalog_jsonld(datasets):
+    return {
+        "@context": "https://schema.org",
+        "@type": "DataCatalog",
+        "name": SITE_NAME,
+        "description": SITE_TAGLINE,
+        "url": BASE_URL,
+        "dataset": [{"@type": "Dataset", "name": d["name"], "url": dataset_url(d)} for d in datasets],
+    }
+
+
+def render_llms_txt(datasets, categories):
+    """https://llmstxt.org/ index for agents: one line per dataset."""
+    out = [f"# {SITE_NAME}", "", f"> {SITE_TAGLINE}", "",
+           f"Each dataset has its own page under {BASE_URL}datasets/<slug>/. "
+           f"All entries are available as JSON at {BASE_URL}datasets.json and with full "
+           f"descriptions at {BASE_URL}llms-full.txt. Datasets are licensed individually.", ""]
+    for cat in categories:
+        members = [d for d in datasets if d["category"] == cat["id"]]
+        if not members:
+            continue
+        out.append(f"## {cat['name']}")
+        out.append("")
+        for d in members:
+            out.append(f"- [{d['name']}]({dataset_url(d)}): {first_sentence(d['description'])}")
+        out.append("")
+    out.append("## Optional")
+    out.append("")
+    out.append(f"- [Tags]({BASE_URL}tags/): datasets grouped by tag")
+    out.append(f"- [Source repository]({SOURCE_URL}): how to add a dataset")
+    return "\n".join(out) + "\n"
+
+
+def render_llms_full_txt(datasets, categories_by_id):
+    out = [f"# {SITE_NAME}", "", f"> {SITE_TAGLINE}", ""]
+    for d in datasets:
+        out.append(f"## {d['name']}")
+        out.append("")
+        out.append(f"URL: {dataset_url(d)}")
+        out.append(f"Category: {categories_by_id[d['category']]['name']}")
+        if d["tags"]:
+            out.append(f"Tags: {', '.join(d['tags'])}")
+        out.append(f"License: {d['license']}")
+        if d["author"]:
+            out.append(f"Author: {d['author']}")
+        if d["doi"]:
+            out.append(f"DOI: https://doi.org/{d['doi']}")
+        out.append("Links:")
+        for l in d["links"]:
+            out.append(f"- {l['label']} ({l['type']}): {l['url']}")
+        out.append("")
+        out.append(" ".join(d["description"].split()))
+        out.append("")
+    return "\n".join(out) + "\n"
+
+
+def render_sitemap(paths):
+    urls = "".join(f"  <url><loc>{e(page_url(p))}</loc></url>\n" for p in paths)
+    return ('<?xml version="1.0" encoding="UTF-8"?>\n'
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + urls + "</urlset>\n")
 
 
 def build(datasets, categories):
@@ -294,6 +415,7 @@ def build(datasets, categories):
         title=f"{SITE_NAME}: Bitcoin datasets",
         content=render_index(datasets, categories, categories_by_id),
         root="./",
+        jsonld=catalog_jsonld(datasets),
     )
 
     for d in datasets:
@@ -304,6 +426,7 @@ def build(datasets, categories):
             content=render_dataset_page(d, categories_by_id),
             root="../../",
             description=first_sentence(d["description"]),
+            jsonld=dataset_jsonld(d, categories_by_id),
         )
 
     tag_counts = {}
@@ -332,6 +455,15 @@ def build(datasets, categories):
     (OUT_DIR / "datasets.json").write_text(
         json.dumps({"categories": categories, "datasets": datasets}, indent=2) + "\n",
         encoding="utf-8",
+    )
+    (OUT_DIR / "llms.txt").write_text(render_llms_txt(datasets, categories), encoding="utf-8")
+    (OUT_DIR / "llms-full.txt").write_text(
+        render_llms_full_txt(datasets, categories_by_id), encoding="utf-8"
+    )
+    pages = sorted(OUT_DIR.rglob("index.html"))
+    (OUT_DIR / "sitemap.xml").write_text(render_sitemap(pages), encoding="utf-8")
+    (OUT_DIR / "robots.txt").write_text(
+        f"User-agent: *\nAllow: /\n\nSitemap: {BASE_URL}sitemap.xml\n", encoding="utf-8"
     )
     (OUT_DIR / ".nojekyll").touch()
 
