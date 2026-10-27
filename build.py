@@ -315,7 +315,7 @@ def page_url(path):
     return BASE_URL + rel
 
 
-def write_page(path, template, *, title, content, root, description=SITE_TAGLINE, jsonld=None):
+def write_page(path, template, *, title, content, root, description=SITE_TAGLINE, jsonld=None, edit_url=None):
     url = page_url(path)
     head = [
         f'<link rel="canonical" href="{e(url)}">',
@@ -336,6 +336,7 @@ def write_page(path, template, *, title, content, root, description=SITE_TAGLINE
             title=e(title),
             meta_description=e(description),
             head_extra="\n".join(head),
+            footer_edit=f' <a href="{e(edit_url)}">Edit on GitHub</a>' if edit_url else "",
             content=content,
             root=root,
             site_name=e(SITE_NAME),
@@ -471,6 +472,7 @@ def build(datasets, categories):
             root="../../",
             description=first_sentence(d["description"]),
             jsonld=dataset_jsonld(d, categories_by_id),
+            edit_url=f"{SOURCE_URL}/edit/main/datasets/{d['slug']}.toml",
         )
 
     tag_counts = {}
