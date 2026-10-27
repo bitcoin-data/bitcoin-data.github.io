@@ -1,0 +1,29 @@
+name = "Non-standard transactions"
+category = "transactions"
+tags = ["transactions", "mempool", "policy", "mining", "mainnet", "csv"]
+author = "0xB10C"
+license = "CC0 1.0"
+description = """
+One row per non-standard transaction mined on the Bitcoin mainnet since late
+2021, with the block height, the mining pool, the reason the transaction
+violates Bitcoin Core's standardness policy, the transaction id and size and
+fee details. The rows are produced by replaying blocks through a Bitcoin Core
+test node with the non-standard transaction finder tool, and the dataset is
+updated sporadically in batches of blocks. It is useful for studying which
+pools mine non-standard transactions, which policy rules they violate and what
+fees they pay; the detection depends on the policy of the Bitcoin Core version
+used, and the methodology changed at block 839493.
+"""
+
+[[links]]
+type = "repository"
+url = "https://github.com/bitcoin-data/non-standard-transactions"
+
+[[links]]
+type = "website"
+url = "https://bitcoin-data.github.io/non-standard-transactions/"
+
+[[links]]
+type = "download"
+label = "non-standard.csv"
+url = "https://raw.githubusercontent.com/bitcoin-data/non-standard-transactions/main/non-standard.csv"
