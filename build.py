@@ -336,7 +336,10 @@ def write_page(path, template, *, title, content, root, description=SITE_TAGLINE
             title=e(title),
             meta_description=e(description),
             head_extra="\n".join(head),
-            footer_edit=f' <a href="{e(edit_url)}">Edit on GitHub</a>' if edit_url else "",
+            footer=(
+                f'<footer class="site-footer"><p><a href="{e(edit_url)}">Edit on GitHub</a></p></footer>'
+                if edit_url else ""
+            ),
             content=content,
             root=root,
             site_name=e(SITE_NAME),
