@@ -223,7 +223,10 @@ def render_index(datasets, categories, categories_by_id):
         if not members:
             continue
         out.append(f'<section id="{e(cat["id"])}">')
-        out.append(f'<h2>{e(cat["name"])}</h2>')
+        out.append(
+            f'<h2>{e(cat["name"])} '
+            f'<a class="anchor" href="#{e(cat["id"])}" aria-label="Link to {e(cat["name"])}">#</a></h2>'
+        )
         out.append(f'<p class="category-description">{e(cat["description"])}</p>')
         out.extend(render_dataset_card(d, categories_by_id, root) for d in members)
         out.append("</section>")

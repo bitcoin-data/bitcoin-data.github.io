@@ -72,6 +72,14 @@ h3 a:hover { color: var(--accent); }
 .toc a { color: var(--fg); text-decoration: none; font-weight: 600; }
 .toc a:hover { color: var(--accent); }
 h2 { scroll-margin-top: 1rem; }
+h2 .anchor {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--muted);
+  text-decoration: none;
+  opacity: 0.5;
+}
+h2:hover .anchor, h2 .anchor:focus { opacity: 1; color: var(--accent); }
 .dataset {
   padding: 1.25rem 0;
   border-bottom: 1px solid var(--border);
