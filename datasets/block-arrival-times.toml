@@ -1,0 +1,28 @@
+name = "Block arrival times"
+category = "p2p-network"
+tags = ["blocks", "propagation", "timestamps", "mainnet", "csv"]
+author = "0xB10C and contributors"
+license = "CC0 1.0"
+description = """
+Block arrival timestamps with millisecond precision as seen by multiple nodes
+on the Bitcoin mainnet, stored as one CSV file per source with the block
+height, header hash and the time the block arrived at that node. The sources
+are Bitcoin Core debug logs of contributors, processed with the included
+script, and CI checks every timestamp against the block's header time. It is
+useful for measuring block propagation delay, comparing when different nodes
+first saw a block and timing mining events; coverage varies by source and
+period, see the data availability graph in the repository.
+"""
+
+[[links]]
+type = "repository"
+url = "https://github.com/bitcoin-data/block-arrival-times"
+
+[[links]]
+type = "website"
+url = "https://bitcoin-data.github.io/block-arrival-times/"
+
+[[links]]
+type = "download"
+label = "data/ directory"
+url = "https://github.com/bitcoin-data/block-arrival-times/tree/main/data"
