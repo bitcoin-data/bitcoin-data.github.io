@@ -44,6 +44,14 @@ main, .site-header, .site-footer {
 .site-name { font-weight: 700; color: var(--fg); text-decoration: none; }
 .site-header nav a { margin-left: 1rem; color: var(--fg); text-decoration: none; }
 .site-header nav a:hover { color: var(--accent); }
+.site-header nav a.cta {
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--accent);
+  font-weight: 600;
+}
+.site-header nav a.cta:hover { background: var(--accent); color: var(--bg); }
 .site-footer {
   border-top: 1px solid var(--border);
   margin-top: 3rem;
