@@ -1,0 +1,29 @@
+name = "Lightning Network gossip capture (gossip-observer)"
+category = "lightning"
+tags = ["p2p", "gossip", "propagation", "timestamps", "mainnet", "parquet"]
+author = "Jonathan Harvey-Buschel (Chaincode Labs)"
+license = "CC BY 4.0"
+doi = "10.5281/zenodo.23111325"
+description = """
+Bitcoin Lightning Network gossip messages (channel_announcement,
+node_announcement, channel_update) as sent and received by 21 instrumented LDK
+nodes, with microsecond timestamps per message, peer and direction, covering
+February to September 2026 as monthly ZIP files of zstd-compressed Parquet
+tables totalling about 130 GB. The collectors run on two hosts near New York
+City with peers chosen per network community to cover about 700 connections,
+and the daily exports are published on Zenodo with a DOI per version. It is
+useful for studying gossip propagation delay, fanout, redundancy and peer
+behaviour during graph sync; messages sent by a collector are mostly replies
+to peers' sync requests rather than relays, so their timestamps need to be
+interpreted with care.
+"""
+
+[[links]]
+type = "repository"
+label = "gossip_observer (collection code)"
+url = "https://github.com/jharveyb/gossip_observer"
+
+[[links]]
+type = "download"
+label = "Zenodo record"
+url = "https://zenodo.org/records/23111326"

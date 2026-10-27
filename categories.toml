@@ -25,3 +25,8 @@ description = "Datasets about mining pools, hashrate and coinbase data."
 id = "development"
 name = "Development"
 description = "Datasets about Bitcoin software development: repositories, issues, pull requests."
+
+[[categories]]
+id = "lightning"
+name = "Lightning Network"
+description = "Datasets about the Lightning Network: channels, gossip, routing."
