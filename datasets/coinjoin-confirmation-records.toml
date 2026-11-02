@@ -1,0 +1,35 @@
+name = "Blockchain verification records for CoinJoin confirmation"
+category = "transactions"
+tags = ["coinjoin", "privacy", "transactions", "mainnet"]
+format = ["parquet", "jsonl"]
+author = "Sagar D. Korde (Somaiya Vidyavihar University), Narendra M. Shekokar"
+license = "CC BY 4.0"
+doi = "10.5281/zenodo.23275811"
+description = """
+Gzipped JSON Lines records with the raw block explorer response for each
+candidate transaction, plus a Parquet table of verdicts giving input and output
+counts and a confirmed-CoinJoin flag. Collected by the authors by querying
+public explorers and applying the Dumplings rules for Whirlpool and WabiSabi
+rounds. Useful as CoinJoin ground truth; only candidates preselected from the
+authors' own corpus were checked, so it is not a complete CoinJoin census.
+"""
+
+[[links]]
+type = "repository"
+label = "CoinJoin (analysis code)"
+url = "https://github.com/sagarkorde/CoinJoin"
+
+[[links]]
+type = "download"
+label = "Zenodo record"
+url = "https://zenodo.org/records/23275811"
+
+[[links]]
+type = "documentation"
+label = "README.md"
+url = "https://zenodo.org/records/23275812/files/README.md"
+
+[[links]]
+type = "other"
+label = "Source transaction corpus (IEEE DataPort)"
+url = "https://doi.org/10.21227/bxmt-mn56"
