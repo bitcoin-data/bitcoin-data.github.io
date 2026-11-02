@@ -14,6 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          # Full history, so a pull request can be diffed against its base
+          # branch to find which dataset entries changed.
+          fetch-depth: 0
       - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
@@ -24,6 +28,30 @@ jobs:
       - uses: actions/upload-pages-artifact@v5
         with:
           path: site
+
+      - name: Render a preview of the changed entries
+        if: github.event_name == 'pull_request'
+        run: |
+          python3 ci/preview.py \
+            --base "origin/${{ github.base_ref }}" \
+            --out preview.md
+          if [ -s preview.md ]; then
+            cat preview.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "No dataset entries changed." >> "$GITHUB_STEP_SUMMARY"
+          fi
+          echo "${{ github.event.number }}" > pr-number.txt
+
+      - name: Upload the preview for the comment workflow
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v7
+        with:
+          name: dataset-preview
+          path: |
+            preview.md
+            pr-number.txt
+          if-no-files-found: ignore
+          retention-days: 7
 
   deploy:
     if: github.event_name != 'pull_request'

@@ -1,0 +1,63 @@
+name: Dataset preview comment
+
+# Posts the rendered preview of changed dataset entries as a pull request
+# comment. This runs separately from the build because a pull request from a
+# fork gets a read-only token, so it cannot comment on itself. Triggering on
+# workflow_run gives this job a write token while still never executing any
+# code from the pull request: it only reads the Markdown the build produced.
+
+on:
+  workflow_run:
+    workflows: ["Build and deploy"]
+    types: [completed]
+
+permissions:
+  contents: read
+
+jobs:
+  comment:
+    if: github.event.workflow_run.event == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      actions: read
+    steps:
+      - name: Download the preview
+        id: download
+        continue-on-error: true
+        uses: actions/download-artifact@v8
+        with:
+          name: dataset-preview
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: preview
+
+      - name: Post or update the comment
+        if: steps.download.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          if [ ! -s preview/preview.md ] || [ ! -s preview/pr-number.txt ]; then
+            echo "No dataset entries changed; nothing to post."
+            exit 0
+          fi
+          pr=$(tr -dc '0-9' < preview/pr-number.txt)
+          if [ -z "$pr" ]; then
+            echo "No pull request number in the artifact." >&2
+            exit 1
+          fi
+          marker='<!-- dataset-preview -->'
+          # Reuse this workflow's own earlier comment so a pull request keeps
+          # one preview instead of collecting one per push.
+          id=$(gh api "repos/$REPO/issues/$pr/comments" --paginate \
+                --jq "[.[] | select(.user.type == \"Bot\" and (.body | startswith(\"$marker\"))) | .id] | last // empty")
+          jq -Rs '{body: .}' preview/preview.md > payload.json
+          if [ -n "$id" ]; then
+            gh api -X PATCH "repos/$REPO/issues/comments/$id" --input payload.json > /dev/null
+            echo "Updated comment $id on #$pr."
+          else
+            gh api -X POST "repos/$REPO/issues/$pr/comments" --input payload.json > /dev/null
+            echo "Posted a new comment on #$pr."
+          fi
