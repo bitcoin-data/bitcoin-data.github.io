@@ -1,0 +1,28 @@
+name = "Blockchair Bitcoin node snapshot"
+category = "p2p-network"
+tags = ["p2p", "nodes", "user-agents", "geolocation", "mainnet"]
+format = ["json"]
+author = "Blockchair"
+license = "Not stated in the API response; Blockchair publishes its own API terms"
+description = """
+A JSON snapshot of the Bitcoin nodes Blockchair connects to, one record per
+address with its user agent, service flags, block height and country, plus
+tallies by country, version and height. Blockchair's explorer reports its own
+nodes' peers through a public endpoint that needs no key. Handy as a quick
+parseable view of client versions; it covers only the peers Blockchair sees, a
+small fraction of reachable nodes, so it is not a crawl.
+"""
+
+[[links]]
+type = "website"
+url = "https://blockchair.com/bitcoin/nodes"
+
+[[links]]
+type = "download"
+label = "nodes endpoint (JSON)"
+url = "https://api.blockchair.com/bitcoin/nodes"
+
+[[links]]
+type = "documentation"
+label = "Blockchair API documentation"
+url = "https://blockchair.com/api/docs"
