@@ -1,0 +1,32 @@
+name = "Bitcoin node census"
+category = "p2p-network"
+tags = ["crawler", "mainnet", "nodes", "p2p", "reachable-nodes"]
+format = ["jsonl"]
+author = "Nick Johnson (nyonson)"
+license = "CC0 1.0"
+description = """
+One JSON object per crawl, giving reachable node counts with how many support
+v2 transport and compact block filters, split by connection type, plus the
+crawl's duration and total nodes contacted. A Rust crawler walks outward from
+one seed node and appends a line per run. Useful for tracking feature adoption;
+onion, I2P and CJDNS nodes are not reached, though the schema has buckets for
+them.
+"""
+
+[[links]]
+type = "repository"
+url = "https://github.com/nyonson/bitcoin-node-census"
+
+[[links]]
+type = "website"
+url = "https://census.yonson.dev/"
+
+[[links]]
+type = "download"
+label = "census.jsonl (one line per census)"
+url = "https://census.yonson.dev/census.jsonl"
+
+[[links]]
+type = "documentation"
+label = "census.schema.json (record schema)"
+url = "https://github.com/nyonson/bitcoin-node-census/blob/master/docs/census.schema.json"
