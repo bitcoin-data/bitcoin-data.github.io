@@ -1,0 +1,38 @@
+name = "OFAC sanctioned digital currency addresses"
+category = "transactions"
+tags = ["addresses", "attribution", "forensics", "mainnet"]
+format = ["text", "json"]
+author = "0xB10C"
+license = "MIT (tool); the addresses come from the US Treasury SDN list"
+description = """
+Every digital currency address designated by the US Office of Foreign Asset
+Control, as one address per line in a text file and as a JSON list, with one
+pair of files per asset. A script extracts them from the Treasury's SDN XML,
+and a workflow regenerates the lists. Useful for checking whether an address is
+sanctioned; the files hold current designations only, with earlier ones in the
+git history.
+"""
+
+[[links]]
+type = "repository"
+url = "https://github.com/0xB10C/ofac-sanctioned-digital-currency-addresses"
+
+[[links]]
+type = "download"
+label = "sanctioned_addresses_XBT.txt (one address per line)"
+url = "https://raw.githubusercontent.com/0xB10C/ofac-sanctioned-digital-currency-addresses/lists/sanctioned_addresses_XBT.txt"
+
+[[links]]
+type = "download"
+label = "sanctioned_addresses_XBT.json"
+url = "https://raw.githubusercontent.com/0xB10C/ofac-sanctioned-digital-currency-addresses/lists/sanctioned_addresses_XBT.json"
+
+[[links]]
+type = "download"
+label = "lists branch (all assets)"
+url = "https://github.com/0xB10C/ofac-sanctioned-digital-currency-addresses/tree/lists"
+
+[[links]]
+type = "other"
+label = "OFAC Specially Designated Nationals list"
+url = "https://home.treasury.gov/policy-issues/financial-sanctions/specially-designated-nationals-and-blocked-persons-list-sdn-human-readable-lists"
