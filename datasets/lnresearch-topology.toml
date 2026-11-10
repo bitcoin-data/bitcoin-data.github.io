@@ -5,6 +5,8 @@ format = ["binary"]
 author = "Christian Decker (lnresearch)"
 license = "MIT (repository); no separate data license stated"
 doi = "10.5281/zenodo.4088530"
+period_start = "2018"
+period_open = true
 description = """
 Lightning Network gossip history: channel_announcement, channel_update and
 node_announcement messages as raw bzip2-compressed message streams, one file

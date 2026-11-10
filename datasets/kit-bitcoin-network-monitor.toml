@@ -5,6 +5,8 @@ format = ["json"]
 author = "Till Neudecker, Matthias Grundmann, Hannes Hartenstein (DSN research group, KASTEL, KIT)"
 license = "CC BY 4.0"
 doi = "10.5281/zenodo.14627525"
+period_start = "2015-07-15"
+period_open = true
 description = """
 Daily snapshots of the peers connected to KIT's Bitcoin monitoring nodes, one
 JSON file per day with each peer's services, version, user agent, autonomous

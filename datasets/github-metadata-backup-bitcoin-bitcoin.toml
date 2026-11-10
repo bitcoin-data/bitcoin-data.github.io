@@ -4,6 +4,8 @@ tags = ["github", "issues", "pull-requests", "bitcoin-core"]
 format = ["json"]
 author = "0xB10C"
 license = "Not specified; issue and comment text belongs to its GitHub authors"
+period_start = "2010-12-19"
+period_open = true
 description = """
 A backup of all issues, pull requests, reviews and comments of the
 bitcoin/bitcoin GitHub repository, the main Bitcoin Core repository, one JSON

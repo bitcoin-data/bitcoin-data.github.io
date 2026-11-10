@@ -5,6 +5,8 @@ format = ["json", "csv"]
 author = "Matteo Romiti, Aljosha Judmayer, Alexei Zamyatin, Bernhard Haslhofer (AIT Austrian Institute of Technology, SBA Research, Imperial College London)"
 license = "CC BY 4.0"
 doi = "10.5281/zenodo.3256312"
+period_start = "2009-01-03"
+period_end = "2018-12-31"
 description = """
 Per-block mining pool attributions with coinbase script, payout addresses and
 attributed pool, address-to-cluster mappings, cluster tags, pool member lists

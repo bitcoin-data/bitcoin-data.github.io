@@ -4,6 +4,8 @@ tags = ["p2p", "addrman", "addresses", "nodes", "mainnet"]
 format = ["json"]
 author = "0xB10C"
 license = "CC0 1.0"
+period_start = "2026-02-02"
+period_open = true
 description = """
 Daily exports of the address manager of Bitcoin Core nodes via the
 getrawaddrman RPC, one JSON file per node with every known address and its

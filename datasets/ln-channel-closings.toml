@@ -4,6 +4,8 @@ tags = ["channels", "fees", "mainnet", "nodes", "transactions"]
 format = ["csv"]
 author = "newabel"
 license = "MIT (repository); no separate data license stated"
+period_start = "2019-01-20"
+period_end = "2023-02-20"
 description = """
 A CSV with one row per closed Lightning channel: short channel id, capacity,
 closing timestamp, a reason code separating mutual from forced closes, the

@@ -4,6 +4,8 @@ tags = ["blocks", "propagation", "timestamps", "mainnet"]
 format = ["csv"]
 author = "0xB10C and contributors"
 license = "CC0 1.0"
+period_start = "2015-08-13"
+period_open = true
 description = """
 Timestamps at which blocks arrived at various Bitcoin nodes, one CSV file per
 node with height, hash and millisecond arrival time. Contributors extract the

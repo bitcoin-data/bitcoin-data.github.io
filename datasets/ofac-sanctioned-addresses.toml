@@ -4,6 +4,7 @@ tags = ["addresses", "attribution", "forensics", "mainnet"]
 format = ["text", "json"]
 author = "0xB10C"
 license = "MIT (tool); the addresses come from the US Treasury SDN list"
+period_open = true
 description = """
 Every digital currency address designated by the US Office of Foreign Asset
 Control, as one address per line in a text file and as a JSON list, with one

@@ -5,6 +5,7 @@ format = ["csv", "text"]
 author = "Dániel Kondor, Márton Pósfai, István Csabai and Gábor Vattay (Eötvös Loránd University)"
 license = "CC0 1.0"
 doi = "10.5061/dryad.qz612jmcf"
+period_end = "2020-02"
 description = """
 Tables of the Bitcoin transaction graph with one row per transaction, input,
 output and block, where addresses and transaction hashes are replaced by

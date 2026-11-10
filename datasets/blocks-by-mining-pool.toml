@@ -4,6 +4,7 @@ tags = ["mining", "pools", "blocks", "coinbase", "mainnet"]
 format = ["csv"]
 author = "Jameson Lopp"
 license = "MIT"
+period_open = true
 description = """
 One CSV row per Bitcoin block with its height, hash and the slug of the pool
 that mined it, attributing each block individually rather than listing

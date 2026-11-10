@@ -5,6 +5,8 @@ format = ["csv", "text"]
 author = "Marie Vasek, Joseph Bonneau, Ryan Castellucci, Cameron Keith and Tyler Moore (University of Tulsa)"
 license = "CC0 1.0"
 doi = "10.7910/DVN/RZHL3X"
+period_start = "2011-07"
+period_end = "2017-02"
 description = """
 CSV tables covering Bitcoin brain wallets, whose keys come from a password:
 transaction inputs and outputs for drained wallets, a brain wallet master

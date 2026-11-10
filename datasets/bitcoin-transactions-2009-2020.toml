@@ -5,6 +5,8 @@ format = ["csv"]
 author = "Ethan Wood (University College London)"
 license = "CC0 1.0"
 doi = "10.7910/DVN/ZLBYTZ"
+period_start = "2009-01"
+period_end = "2020-10"
 description = """
 Bitcoin value transfers, one row per sender and recipient pair with a Unix
 timestamp, the sending address, the receiving address and the amount in

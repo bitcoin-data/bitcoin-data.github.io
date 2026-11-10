@@ -4,6 +4,8 @@ tags = ["p2p", "nodes", "crawler", "reachable-nodes", "user-agents", "geolocatio
 format = ["json"]
 author = "Rodrigo Martínez (brunneis)"
 license = "Not specified (crawler code MIT)"
+period_start = "2026-05-08"
+period_open = true
 description = """
 Snapshots of reachable Bitcoin nodes from a revival of the bitnodes.io
 crawler, each a JSON document listing every node with version, user agent,

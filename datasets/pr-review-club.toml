@@ -4,6 +4,8 @@ tags = ["bitcoin-core", "pull-requests", "code-review", "irc"]
 format = ["text"]
 author = "Bitcoin Core PR Review Club hosts and contributors"
 license = "Not specified; meeting log text belongs to its speakers"
+period_start = "2019-05-01"
+period_open = true
 description = """
 One Markdown file per review club meeting, with YAML front matter naming the
 reviewed pull request, its author, affected components, the host and the

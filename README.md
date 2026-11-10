@@ -70,6 +70,8 @@ format = ["csv", "binary"]
 author = "0xB10C and contributors"
 license = "CC0 1.0 (data), MIT (code)"
 doi = "10.5281/zenodo.22667157"
+period_start = "2011-01-10"
+period_open = true
 description = """
 One row per stale block observed on the Bitcoin mainnet ...
 """

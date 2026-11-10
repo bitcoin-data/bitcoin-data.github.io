@@ -4,6 +4,8 @@ tags = ["nodes", "channels", "topology", "routing", "fees", "mainnet"]
 format = ["parquet", "json"]
 author = "Saurabh Kumar (Bitcoin Data Labs)"
 license = "CC BY 4.0 (data), MIT (scripts)"
+period_start = "2026-09-11"
+period_open = true
 description = """
 Lightning Network profile tables as Parquet, one row per node or per channel,
 with capacity, channel counts, fee policy, funding transaction, feature bits

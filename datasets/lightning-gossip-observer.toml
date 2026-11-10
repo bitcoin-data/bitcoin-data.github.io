@@ -5,6 +5,8 @@ format = ["parquet"]
 author = "Jonathan Harvey-Buschel (Chaincode Labs)"
 license = "CC BY 4.0"
 doi = "10.5281/zenodo.23111325"
+period_start = "2026-02-05"
+period_open = true
 description = """
 Lightning Network gossip messages as sent and received by instrumented LDK
 nodes, with microsecond timestamps per message, peer and direction, published

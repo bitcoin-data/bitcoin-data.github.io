@@ -4,6 +4,8 @@ tags = ["mining", "energy", "mainnet"]
 format = ["csv"]
 author = "Cambridge Centre for Alternative Finance (Cambridge Judge Business School)"
 license = "CC BY-NC-SA 4.0"
+period_start = "2010-07-18"
+period_open = true
 description = """
 One row per day in a CSV, with a Unix timestamp and lower-bound, upper-bound
 and best-guess estimates of the Bitcoin network's annualised electricity

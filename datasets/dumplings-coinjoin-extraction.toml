@@ -5,6 +5,8 @@ format = ["text", "json"]
 author = "Petr Švenda (Masaryk University)"
 license = "CC BY 4.0 (data), MIT (analysis code); the Dumplings fork states none"
 doi = "10.5281/zenodo.17870024"
+period_start = "2018-07-19"
+period_end = "2025-11-10"
 description = """
 CoinJoin transactions of several wallet designs found by the Dumplings
 scanner, one text line per transaction with txid, block hash, block time,

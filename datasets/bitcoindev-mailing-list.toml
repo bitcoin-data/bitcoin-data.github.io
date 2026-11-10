@@ -4,6 +4,8 @@ tags = ["bips", "consensus", "history", "mailing-list"]
 format = ["text"]
 author = "gnusha.org"
 license = "Not specified; message text belongs to its email authors"
+period_start = "2011-06-12"
+period_open = true
 description = """
 A public-inbox mirror of the Bitcoin development mailing list, where one git
 commit adds one raw email message with its full headers under a path derived

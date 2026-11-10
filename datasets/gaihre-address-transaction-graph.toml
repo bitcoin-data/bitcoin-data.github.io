@@ -4,6 +4,8 @@ tags = ["transactions", "addresses", "privacy", "mainnet"]
 format = ["text", "binary"]
 author = "Anil Gaihre, Yan Luo, Hang Liu (UMass Lowell)"
 license = "CC BY 4.0"
+period_start = "2009-01-03"
+period_end = "2018-06-07"
 description = """
 Bipartite graph of Bitcoin addresses and transactions as a text edge list
 (address, transaction, input/output flag, satoshi value) and as binary CSR

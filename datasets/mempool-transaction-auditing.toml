@@ -4,6 +4,8 @@ tags = ["p2p", "mempool", "transactions", "propagation", "timestamps", "mainnet"
 format = ["csv"]
 author = "Jannik Albrecht and Ghassan Karame (Ruhr University Bochum)"
 license = "CC BY-NC 4.0 (non-commercial use only)"
+period_start = "2024-10"
+period_end = "2025-07-08"
 description = """
 CSV tables of first-seen times for unconfirmed transactions, one row per
 transaction hash and one column per observing node holding the Unix-second

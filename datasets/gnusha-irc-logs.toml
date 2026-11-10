@@ -4,6 +4,8 @@ tags = ["bitcoin-core", "chat-logs", "history", "irc"]
 format = ["text"]
 author = "gnusha.org"
 license = "Not specified; message text belongs to the channel participants"
+period_start = "2014-10-19"
+period_open = true
 description = """
 Daily plain text logs of the IRC channels used for Bitcoin Core, Lightning and
 protocol development, one file per channel per day in irssi format with one

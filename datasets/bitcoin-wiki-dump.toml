@@ -4,6 +4,7 @@ tags = ["wiki", "history", "archive"]
 format = ["text", "binary"]
 author = "WikiTeam"
 license = "Not specified by the archive item; en.bitcoin.it publishes its pages under CC BY 3.0"
+period_end = "2014-02-10"
 description = """
 A MediaWiki XML export of every page of the en.bitcoin.it wiki with its full
 revision history, plus title and image lists and the uploaded images, in one

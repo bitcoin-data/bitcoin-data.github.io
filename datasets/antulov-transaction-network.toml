@@ -5,6 +5,8 @@ format = ["text"]
 author = "Nino Antulov-Fantulin, Dijana Tolic, Matija Piskorec, Zhang Ce and Irena Vodenska (ETH Zurich)"
 license = "CC BY 4.0"
 doi = "10.5281/zenodo.3571353"
+period_start = "2012"
+period_end = "2017"
 description = """
 A Bitcoin transaction network edge list, one comma-separated line per transfer
 with integer source and target node ids, a Unix timestamp and an amount in

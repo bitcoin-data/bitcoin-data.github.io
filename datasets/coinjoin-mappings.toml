@@ -4,6 +4,8 @@ tags = ["coinjoin", "privacy", "transactions", "wasabi"]
 format = ["json", "csv"]
 author = "Jiri Gavenda, Petr Svenda, Stanislav Bobon and Vladimir Sedlacek (CRoCS, Masaryk University)"
 license = "MIT"
+period_start = "2025-04-10"
+period_end = "2025-04-17"
 description = """
 CoinJoin transactions as JSON, each input and output carrying address, value
 and owning wallet, plus a CSV counting the mappings enumerated per

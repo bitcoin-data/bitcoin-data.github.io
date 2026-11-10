@@ -5,6 +5,8 @@ format = ["csv"]
 author = "Diego R. Llanos (Universidad de Valladolid)"
 license = "CC BY 4.0 (data and documentation), MIT (scripts)"
 doi = "10.5281/zenodo.21156870"
+period_start = "2009-01-01"
+period_open = true
 description = """
 Daily Bitcoin on-chain series covering block production, blockspace, fees,
 miner revenue, difficulty, estimated hashrate, supply, UTXO counts and

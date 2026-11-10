@@ -4,6 +4,8 @@ tags = ["bitcoin-core", "history", "meetings", "releases"]
 format = ["text"]
 author = "Bitcoin Core website contributors"
 license = "MIT"
+period_start = "2015-10-01"
+period_end = "2018-11-01"
 description = """
 One Markdown file per Bitcoin Core development IRC meeting, with YAML front
 matter and a prose summary of each topic discussed, linking to the raw channel

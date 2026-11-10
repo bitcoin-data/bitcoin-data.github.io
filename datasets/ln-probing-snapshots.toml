@@ -4,6 +4,8 @@ tags = ["channels", "topology", "routing", "privacy", "mainnet"]
 format = ["json"]
 author = "Sergei Tikhomirov (University of Luxembourg)"
 license = "MIT"
+period_start = "2021-05-23"
+period_end = "2021-12-09"
 description = """
 Core Lightning listchannels dumps as JSON, one record per directed channel
 with its short channel id, endpoint public keys, capacity, base and

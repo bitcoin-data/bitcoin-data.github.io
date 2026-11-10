@@ -4,6 +4,8 @@ tags = ["mining", "pools", "blocks", "coinbase", "mainnet"]
 format = ["csv", "json"]
 author = "SoloLuck.io"
 license = "CC BY 4.0"
+period_start = "2022-01-11"
+period_open = true
 description = """
 One row per verified solo-mined block from a small or home miner, with height,
 pool, hardware, hashrate, difficulty, reward, odds and source links, in CSV and

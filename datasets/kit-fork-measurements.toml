@@ -4,6 +4,8 @@ tags = ["blocks", "forks", "propagation", "mining", "timestamps", "mainnet"]
 format = ["text"]
 author = "Till Neudecker and Hannes Hartenstein (DSN research group, KASTEL, KIT)"
 license = "CC BY 4.0"
+period_start = "2015-10"
+period_end = "2018-03"
 description = """
 Observed blockchain forks as plain-text tables, one row per fork with the
 height, the reception times of the main-chain and orphaned block, their delay,

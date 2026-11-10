@@ -4,6 +4,8 @@ tags = ["p2p", "nodes", "reachable-nodes", "operating-systems", "mainnet"]
 format = ["csv"]
 author = "Vinicius Cestari"
 license = "MIT"
+period_start = "2026-07-06"
+period_open = true
 description = """
 Guessed operating systems of reachable Bitcoin nodes, one CSV per scan with a
 row per host giving IP address, port, OS class, confidence and host state.

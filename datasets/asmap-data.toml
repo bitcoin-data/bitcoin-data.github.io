@@ -4,6 +4,8 @@ tags = ["p2p", "asmap", "autonomous-systems", "addresses", "routing"]
 format = ["binary", "text"]
 author = "ASMap contributors"
 license = "MIT"
+period_start = "2024-01-05"
+period_open = true
 description = """
 Maps from IP address ranges to autonomous system numbers, encoded for Bitcoin
 Core's asmap option, with one filled and one unfilled binary file per run,

@@ -4,6 +4,7 @@ tags = ["addresses", "blocks", "fees", "mainnet", "transactions"]
 format = ["csv", "jsonl", "parquet"]
 author = "Google Cloud Public Dataset Program"
 license = "Not specified (bitcoin-etl extraction code is MIT)"
+period_open = true
 description = """
 Two BigQuery tables covering the chain, one row per block and one per
 transaction, with each transaction's inputs and outputs nested alongside their

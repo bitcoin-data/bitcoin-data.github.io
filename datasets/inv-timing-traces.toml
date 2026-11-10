@@ -5,6 +5,8 @@ format = ["csv"]
 author = "David Mödinger and Franz J. Hauck (Ulm University)"
 license = "CC BY 4.0"
 doi = "10.5281/zenodo.2547395"
+period_start = "2019-01-17"
+period_end = "2019-02-06"
 description = """
 Gzip-compressed CSV traces of transaction inv announcements: one row per
 announcement with a millisecond timestamp, a keyed hash of the announcing

@@ -4,6 +4,7 @@ tags = ["transactions", "mempool", "policy", "mining", "mainnet"]
 format = ["csv"]
 author = "0xB10C"
 license = "CC0 1.0"
+period_open = true
 description = """
 Mined Bitcoin transactions that violate Bitcoin Core's standardness policy,
 one CSV row per transaction with height, mining pool, reason, txid, size and

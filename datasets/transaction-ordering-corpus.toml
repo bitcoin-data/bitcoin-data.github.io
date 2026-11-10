@@ -4,6 +4,8 @@ tags = ["transactions", "blocks", "mining", "pools", "fees", "mainnet"]
 format = ["csv"]
 author = "Johnnatan Messias, Mohamed Alzayat, Balakrishnan Chandrasekaran, Krishna P. Gummadi, Patrick Loiseau and Alan Mislove (MPI-SWS)"
 license = "Not specified"
+period_start = "2018-01-01"
+period_end = "2020-12-31"
 description = """
 One semicolon-separated CSV row per mined transaction with its inferred mining
 pool, position in the block, fee, feerate, child-pays-for-parent flag and
