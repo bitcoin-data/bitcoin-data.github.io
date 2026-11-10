@@ -4,6 +4,8 @@ tags = ["forum", "history", "archive"]
 format = ["text"]
 author = "Internet Archive warczone collection"
 license = "Not specified; the crawled forum posts belong to their authors"
+period_start = "2017-10-23"
+period_end = "2017-11-18"
 description = """
 WARC files of crawled bitcointalk.org pages, mostly full-thread views of the
 forum, with gzipped CDX indexes mapping each captured URL to its offset in the

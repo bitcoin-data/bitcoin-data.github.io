@@ -4,6 +4,8 @@ tags = ["forum", "history", "mailing-list"]
 format = ["json"]
 author = "Satoshi Nakamoto Institute"
 license = "AGPL-3.0 (repository); the archived writings belong to their authors"
+period_start = "2008-10-31"
+period_end = "2014-03-07"
 description = """
 Structured JSON of Satoshi Nakamoto's emails and forum posts: one record per
 message with sender, subject, timestamp, body text and a link to its original

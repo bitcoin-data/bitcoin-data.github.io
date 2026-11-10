@@ -5,6 +5,8 @@ format = ["text", "csv"]
 author = "Danila Valko, Jorge Marx Gómez (University of Oldenburg)"
 license = "CC BY 4.0"
 doi = "10.7910/DVN/2OAVO6"
+period_start = "2019-01-20"
+period_end = "2023-07-16"
 description = """
 Lightning Network graph snapshots as NetworkX GML files, where a node carries
 its public key, alias and city-level geolocation and an edge carries a short

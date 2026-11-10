@@ -4,6 +4,8 @@ tags = ["mempool", "transactions", "fees", "pools", "mainnet"]
 format = ["csv", "json"]
 author = "Johnnatan Messias, Vabuk Pahari, Balakrishnan Chandrasekaran, Krishna P. Gummadi and Patrick Loiseau (MPI-SWS)"
 license = "Not specified"
+period_start = "2020-11-24"
+period_end = "2020-12-01"
 description = """
 One row per unconfirmed transaction in a full mempool dump, with fee, size,
 ancestor and descendant fields and dependencies, plus accelerator price quotes

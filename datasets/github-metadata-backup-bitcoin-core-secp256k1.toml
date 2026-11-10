@@ -4,6 +4,8 @@ tags = ["github", "issues", "pull-requests", "bitcoin-core"]
 format = ["json"]
 author = "0xB10C"
 license = "Not specified; issue and comment text belongs to its GitHub authors"
+period_start = "2014-03-06"
+period_open = true
 description = """
 A backup of all issues, pull requests, reviews and comments of the
 bitcoin-core/secp256k1 GitHub repository, the libsecp256k1 elliptic curve

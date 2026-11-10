@@ -5,6 +5,8 @@ format = ["csv", "json"]
 author = "Enrico Tedeschi (UiT The Arctic University of Norway)"
 license = "CC0 1.0"
 doi = "10.18710/8IKVEU"
+period_start = "2021-01-01"
+period_end = "2021-05-31"
 description = """
 Separate block and transaction CSV tables, joined on block hash: blocks carry
 size, height and creation time, transactions carry fee, size, broadcast time

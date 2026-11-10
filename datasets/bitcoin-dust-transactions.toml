@@ -5,6 +5,8 @@ format = ["text", "csv"]
 author = "Matteo Loporchio and Damiano Di Francesco Maesa (University of Pisa)"
 license = "CC BY 4.0 (data), not specified (code)"
 doi = "10.5281/zenodo.7696453"
+period_start = "2009-01-03"
+period_end = "2017-08-10"
 description = """
 Bitcoin transactions creating or spending dust outputs, one text line per
 transaction with block time, height, fee, size and each input and output as

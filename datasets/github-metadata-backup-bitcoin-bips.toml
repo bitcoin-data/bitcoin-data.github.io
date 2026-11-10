@@ -4,6 +4,8 @@ tags = ["github", "issues", "pull-requests", "bips"]
 format = ["json"]
 author = "0xB10C"
 license = "Not specified; issue and comment text belongs to its GitHub authors"
+period_start = "2013-12-06"
+period_open = true
 description = """
 A backup of all issues, pull requests, reviews and comments of the
 bitcoin/bips GitHub repository, the Bitcoin Improvement Proposals, one JSON

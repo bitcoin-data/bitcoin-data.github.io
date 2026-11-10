@@ -4,6 +4,8 @@ tags = ["channels", "mainnet", "nodes", "routing", "topology"]
 format = ["json"]
 author = "Charmaine Ndolo and Florian Tschorsch"
 license = "MIT (repository); no separate data license stated"
+period_start = "2023-05-16"
+period_end = "2023-05-16"
 description = """
 One JSON snapshot of the public Lightning channel graph in lnd describegraph
 shape: announced nodes with alias, addresses and feature bits, and channels

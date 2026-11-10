@@ -5,6 +5,8 @@ format = ["csv"]
 author = "Yulin Liu, Luyao Zhang and Yinhong Zhao (Duke Kunshan University)"
 license = "CC BY 4.0, per the Dataverse terms of use; no license block set"
 doi = "10.7910/DVN/XSZQWP"
+period_start = "2009-01-03"
+period_end = "2021-02-10"
 description = """
 CSV tables of daily Bitcoin output cohorts, one row per date with counts of
 unspent outputs bucketed by age and of spent outputs bucketed by lifespan, plus

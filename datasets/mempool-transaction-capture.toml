@@ -5,6 +5,8 @@ format = ["text"]
 author = "Zening Zhao, Jinsong Wang (Tianjin University of Technology)"
 license = "CC BY 4.0"
 doi = "10.17632/t2x25md2pj.1"
+period_start = "2021-04-19"
+period_end = "2021-04-23"
 description = """
 One row per transaction in a node's mempool: txid and wtxid, size, weight,
 ancestor and descendant fees, entry time, and the decoded inputs and outputs.

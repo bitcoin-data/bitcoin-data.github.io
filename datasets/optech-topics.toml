@@ -4,6 +4,8 @@ tags = ["bitcoin-core", "bips", "newsletters", "history"]
 format = ["text"]
 author = "Bitcoin Optech"
 license = "MIT"
+period_start = "2018-06-08"
+period_open = true
 description = """
 One Markdown file per Bitcoin technology topic, with YAML front matter giving
 the title, categories, aliases, primary sources and links to every newsletter

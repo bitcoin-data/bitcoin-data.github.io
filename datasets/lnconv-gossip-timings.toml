@@ -4,6 +4,8 @@ tags = ["channels", "gossip", "mainnet", "propagation", "timestamps", "topology"
 format = ["csv", "json"]
 author = "Niklas Gögge, Elias Rohrer, Florian Tschorsch (TU Berlin)"
 license = "MIT (code); no separate data license stated"
+period_start = "2021-10-30"
+period_end = "2021-10-30"
 description = """
 A zstd-compressed CSV with one row per observed Lightning gossip message, its
 type, channel policy fields, origin timestamp and when the collector saw it,

@@ -5,6 +5,8 @@ format = ["parquet", "csv"]
 author = "Célestin Coquidé and Rémy Cazabet (LIRIS)"
 license = "CC BY 4.0 (data), not specified (construction scripts)"
 doi = "10.5281/zenodo.10844224"
+period_start = "2009-01-03"
+period_end = "2021-01-25"
 description = """
 Entity-level Bitcoin transfers as a temporal graph: a stream graph with one
 Parquet row per entity-to-entity transfer carrying block timestamp and value in

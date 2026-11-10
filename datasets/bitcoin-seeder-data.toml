@@ -4,6 +4,8 @@ tags = ["p2p", "dns-seeds", "crawler", "nodes", "addresses", "mainnet"]
 format = ["jsonl", "text", "csv", "json"]
 author = "Joris Strakeljahn"
 license = "Not specified"
+period_start = "2026-05-10"
+period_open = true
 description = """
 Answers of Bitcoin's mainnet DNS seeds, one JSON line per query with record
 type, status, TTL and returned addresses, plus unmodified seeder and crawler

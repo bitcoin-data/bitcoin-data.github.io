@@ -5,6 +5,8 @@ format = ["text", "csv"]
 author = "Matteo Loporchio and Damiano Di Francesco Maesa (University of Pisa)"
 license = "CC BY 4.0"
 doi = "10.5281/zenodo.18938799"
+period_start = "2009-01-03"
+period_end = "2017-08-10"
 description = """
 All Bitcoin transactions up to a given block height, one compressed text line
 per transaction with block time, height, fee, size and each input and output as

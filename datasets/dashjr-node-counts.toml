@@ -4,6 +4,8 @@ tags = ["p2p", "nodes", "reachable-nodes", "user-agents", "crawler", "mainnet"]
 format = ["text", "json"]
 author = "Luke Dashjr"
 license = "Not specified"
+period_start = "2025-05-04"
+period_open = true
 description = """
 The data behind Luke Dashjr's node count charts: a plain-text history with one
 line per sample giving a Unix timestamp, the listening node count, the

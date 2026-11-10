@@ -4,6 +4,8 @@ tags = ["p2p", "nodes", "reachable-nodes", "crawler", "user-agents", "geolocatio
 format = ["json", "csv", "binary"]
 author = "Jean-Philippe Eisenbarth, Thibault Cholez, Olivier Perrin (LORIA, Université de Lorraine, Inria)"
 license = "Not specified (the accompanying papers on Zenodo are CC BY 4.0)"
+period_start = "2020-02-07"
+period_end = "2020-07-09"
 description = """
 Per-crawl snapshots of the Bitcoin mainnet network: JSON lists of discovered
 IPv4 nodes (hashed IP, port, services, height), CSV counts of GETADDR responses,

@@ -4,6 +4,8 @@ tags = ["topology", "channels", "nodes", "geolocation", "mainnet"]
 format = ["json"]
 author = "István András Seres, László Gulyás, Dániel A. Nagy, Péter Burcsi (Eötvös Loránd University)"
 license = "Not specified"
+period_start = "2019-01-03"
+period_end = "2019-04-18"
 description = """
 Lightning Network graph dumps in the lnd describegraph JSON layout: each node
 with its public key, alias, announced addresses, reachability flag and

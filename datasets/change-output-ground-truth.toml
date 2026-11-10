@@ -4,6 +4,7 @@ tags = ["transactions", "addresses", "privacy", "mainnet"]
 format = ["csv"]
 author = "Malte Möser and Arvind Narayanan (Princeton University)"
 license = "Not specified"
+period_end = "2021-06"
 description = """
 One CSV row per Bitcoin transaction with a known change output, giving the
 transaction hash and that output's index. Malte Möser and Arvind Narayanan

@@ -5,6 +5,8 @@ format = ["binary", "parquet", "json"]
 author = "Carlos Baquero (Universidade do Porto) and Raquel Menezes"
 license = "CC BY 4.0 (data and outputs), MIT (code)"
 doi = "10.5281/zenodo.22922174"
+period_start = "2012"
+period_end = "2025"
 description = """
 Per-height archives of the unspent output set: the exact vector of positive
 output values as 64-bit integers, sampled fixed-size output records, and the

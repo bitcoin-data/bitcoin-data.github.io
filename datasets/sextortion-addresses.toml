@@ -5,6 +5,8 @@ format = ["csv"]
 author = "Masarah Paquet-Clouston, Matteo Romiti, Bernhard Haslhofer, Tomas Charvat"
 license = "CC BY 4.0"
 doi = "10.5281/zenodo.3515198"
+period_start = "2018-10-02"
+period_end = "2019-02-13"
 description = """
 A plain list of Bitcoin addresses, one per line with no header, each demanded
 as payment in a sextortion spam email. Extracted from a corpus of spam messages

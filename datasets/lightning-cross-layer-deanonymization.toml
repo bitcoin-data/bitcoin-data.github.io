@@ -5,6 +5,8 @@ format = ["csv", "json"]
 author = "Matteo Romiti, Friedhelm Victor, Pedro Moreno-Sanchez, Peter Sebastian Nordholt, Bernhard Haslhofer, Matteo Maffei (AIT Austrian Institute of Technology, TU Berlin, IMDEA Software Institute, Chainalysis, TU Wien)"
 license = "CC BY 4.0"
 doi = "10.5281/zenodo.4482107"
+period_start = "2018-01-12"
+period_end = "2020-09-09"
 description = """
 A Lightning Network graph snapshot (channels, node public keys, aliases,
 announced addresses, WHOIS data) with the on-chain funding and settlement

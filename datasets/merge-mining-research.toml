@@ -4,6 +4,7 @@ tags = ["blocks", "headers", "forks", "mining", "coinbase", "consensus", "mainne
 format = ["csv", "json"]
 author = "deadmanoz"
 license = "CC BY 4.0 (data), MIT (code)"
+period_open = true
 description = """
 Merge Mining Research publishes Bitcoin parent headers and, where available,
 coinbase data recovered from merge-mined chains such as Namecoin. The datasets

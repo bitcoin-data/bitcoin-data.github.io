@@ -5,6 +5,8 @@ format = ["text"]
 author = "Aristodemos Paphitis, Nicolas Kourtellis and Michael Sirivianos (Cyprus University of Technology, Telefonica Research)"
 license = "CC BY 4.0"
 doi = "10.6084/m9.figshare.23522919"
+period_start = "2020-06-26"
+period_end = "2020-07-20"
 description = """
 Edge lists of the known-peer graphs of several cryptocurrency networks,
 including Bitcoin: one file per crawl snapshot, one line per node listing the

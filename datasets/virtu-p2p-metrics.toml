@@ -4,6 +4,8 @@ tags = ["p2p", "nodes", "dns-seeds", "reachable-nodes", "mainnet"]
 format = ["csv"]
 author = "virtu"
 license = "AGPL 3.0"
+period_start = "2022-10-11"
+period_end = "2025-11-04"
 description = """
 Daily time series on the health of Bitcoin's P2P network: reachable nodes by
 network type, unique and long-term reachable node estimates, and the quality

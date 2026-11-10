@@ -4,6 +4,8 @@ tags = ["p2p", "propagation", "blocks", "transactions", "fees", "user-agents", "
 format = ["parquet"]
 author = "DataForge (dataforge-labs)"
 license = "ODC-BY 1.0"
+period_start = "2026-09-27"
+period_end = "2026-09-28"
 description = """
 Parquet tables of block and transaction propagation timing across Bitcoin and
 several altcoins: one row per block or transaction with a first-seen timestamp,

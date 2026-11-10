@@ -4,6 +4,8 @@ tags = ["p2p", "nodes", "bitcoin-core", "blocks", "mempool", "transactions", "ma
 format = ["text"]
 author = "Muhammad Anas Imtiaz, David Starobinski, Ari Trachtenberg and Nabeel Younis (NISLAB, Boston University)"
 license = "Not specified"
+period_start = "2020-05-22"
+period_end = "2020-07-21"
 description = """
 Plain-text event logs from Bitcoin Core nodes patched to record peer-to-peer
 events, each line carrying a human-readable time, a monotonic timestamp and an

@@ -4,6 +4,8 @@ tags = ["mining", "pools", "blocks", "coinbase", "mainnet"]
 format = ["csv"]
 author = "Mary Milad, Christina Ovezik, Dimitris Karakostas and Daniel W. Woods (Blockchain Technology Lab, University of Edinburgh)"
 license = "MIT"
+period_start = "2018-01-01"
+period_end = "2023-12-31"
 description = """
 Blocks mined per day by each Bitcoin mining entity, one CSV row per pool or
 unattributed address with a column per day. Compiled by Edinburgh's

@@ -5,6 +5,8 @@ format = ["csv", "parquet", "json"]
 author = "Hugo Schnoering and Michalis Vazirgiannis (LIX, École Polytechnique)"
 license = "CC BY 4.0 (data), not specified (code)"
 doi = "10.5281/zenodo.22239037"
+period_start = "2019-10-12"
+period_end = "2021-09-11"
 description = """
 Address-transaction graphs for machine learning on Bitcoin: training graphs
 with CSV node features, edge features and heuristic clustering labels, plus

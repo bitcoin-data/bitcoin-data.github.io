@@ -4,6 +4,8 @@ tags = ["mining", "pools", "coinbase", "timestamps", "propagation", "mainnet"]
 format = ["parquet"]
 author = "DataForge (dataforge-labs)"
 license = "ODC-BY"
+period_start = "2026-08-28"
+period_end = "2026-09-03"
 description = """
 Stratum mining.notify jobs from pool endpoints, one Parquet row per job with
 observation time, previous block hash, nTime, coinbase, merkle branch count and

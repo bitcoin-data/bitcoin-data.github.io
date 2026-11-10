@@ -4,6 +4,8 @@ tags = ["bitcoin-core", "chat-logs", "history", "irc"]
 format = ["text"]
 author = "Bryan Bishop"
 license = "Not specified; message text belongs to the channel participants"
+period_start = "2010"
+period_end = "2018"
 description = """
 A single compressed archive of early IRC logs from the Freenode channels
 #bitcoin-dev, #bitcoin-core-dev and #bitcoin-otc, one plain text file per

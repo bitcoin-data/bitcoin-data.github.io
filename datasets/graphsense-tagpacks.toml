@@ -4,6 +4,7 @@ tags = ["addresses", "attribution", "forensics", "mainnet"]
 format = ["text"]
 author = "Bernhard Haslhofer, Melitta Dragaschnig, Rainer Stütz, Matteo Romiti and Gibran Gomez (GraphSense)"
 license = "MIT"
+period_open = true
 description = """
 Attribution tags for cryptoasset addresses as YAML TagPacks: a record gives an
 address a label, category, actor and link to its public source, in a pack with

@@ -4,6 +4,8 @@ tags = ["mempool", "transactions", "fees", "propagation", "mainnet"]
 format = ["parquet"]
 author = "DataForge (dataforge-labs)"
 license = "ODC-BY 1.0"
+period_start = "2026-08-25"
+period_end = "2026-09-05"
 description = """
 One Parquet row per observed transaction with first-seen time, time pending,
 fee rate, ancestor package fields and an outcome of confirmed, dropped or

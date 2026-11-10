@@ -4,6 +4,8 @@ tags = ["crawler", "mainnet", "nodes", "p2p", "reachable-nodes"]
 format = ["jsonl"]
 author = "Nick Johnson (nyonson)"
 license = "CC0 1.0"
+period_start = "2025-06-14"
+period_open = true
 description = """
 One JSON object per crawl, giving reachable node counts with how many support
 v2 transport and compact block filters, split by connection type, plus the
