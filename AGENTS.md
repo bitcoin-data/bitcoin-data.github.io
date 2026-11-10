@@ -68,6 +68,9 @@ the fields:
 | `license`     | yes      | Free text. Name the data license and, if different, the code license, e.g. `CC0 1.0 (data), MIT (code)`. If there is no license, write `Not specified`. |
 | `author`      | no       | The person, group or project publishing the dataset. |
 | `doi`         | no       | Bare DOI, e.g. `10.5281/zenodo.22667157`. Prefer the concept DOI that resolves to the latest version. |
+| `period_start` | no      | First time the records are about: `YYYY`, `YYYY-MM`, or `YYYY-MM-DD`. |
+| `period_end`  | no       | Last time the records are about, in the same form. |
+| `period_open` | no       | `true` when the publisher is still extending the series. Leave `period_end` out in that case. |
 
 The description is exactly three short sentences, about 50 to 70 words in
 total. Each answers one question:
@@ -80,7 +83,15 @@ total. Each answers one question:
 Descriptions must be timeless. Do not include dates, time ranges, row or file
 counts, sizes, version numbers, update frequencies, or status words such as
 "currently", "since", "recently" or "stopped". These facts change and nobody
-updates them. Describe what the dataset is, not its state today.
+updates them. Describe what the dataset is, not its state today. Put dates in
+`period_start`, `period_end`, and `period_open` instead, and leave those keys
+out when the dataset's own sources do not state a range. Set `period_open`
+only when a source shows the publisher is still adding records, and cite that
+source in the pull request. Block heights alone are not dates. When a file
+stores a raw block header and no time column, `nTime` is the uint32
+little-endian at byte offset 68 of the 80-byte header: use the earliest as
+the start and, for a closed series, the latest as the end, written as
+`YYYY-MM-DD` UTC.
 
 Write plainly for someone who knows Bitcoin but not this dataset. No marketing
 language, no "comprehensive" or "powerful". The index page shows every

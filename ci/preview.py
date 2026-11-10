@@ -74,8 +74,11 @@ def render(datasets, categories_by_id):
         rows = [
             ("Category", categories_by_id[d["category"]]["name"]),
             ("Format", build.format_labels(d)),
-            ("License", d["license"]),
         ]
+        label = build.period_label(d)
+        if label:
+            rows.append(("Period", label))
+        rows.append(("License", d["license"]))
         if d["author"]:
             rows.append(("Author", d["author"]))
         if d["doi"]:

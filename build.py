@@ -9,12 +9,14 @@ the site to site/. Uses only the Python standard library (3.11+ for tomllib).
     python3 build.py --tags   # validate and list existing tags with counts
 """
 
+import calendar
 import html
 import json
 import re
 import shutil
 import sys
 import tomllib
+from datetime import date
 from pathlib import Path
 from string import Template
 
@@ -79,6 +81,94 @@ def load_categories():
     return categories
 
 
+def period_bound(value, bound):
+    """Expand a stored period string to the first or last calendar day it covers."""
+    if not isinstance(value, str):
+        return None
+    if re.fullmatch(r"\d{4}", value):
+        year = int(value)
+        return date(year, 1, 1) if bound == "start" else date(year, 12, 31)
+    if re.fullmatch(r"\d{4}-\d{2}", value):
+        year, month = int(value[:4]), int(value[5:7])
+        if not 1 <= month <= 12:
+            raise ValueError(month)
+        if bound == "start":
+            return date(year, month, 1)
+        return date(year, month, calendar.monthrange(year, month)[1])
+    if re.fullmatch(r"\d{4}-\d{2}-\d{2}", value):
+        return date.fromisoformat(value)
+    return None
+
+
+def apply_period(entry, where):
+    """Return (start, end, open) from an entry, or raise EntryError."""
+    start = entry.get("period_start")
+    end = entry.get("period_end")
+    period_open = entry.get("period_open", False)
+    expanded = {}
+    for key, value, bound in (
+        ("period_start", start, "start"),
+        ("period_end", end, "end"),
+    ):
+        if key not in entry:
+            continue
+        try:
+            expanded[key] = period_bound(value, bound)
+        except ValueError:
+            expanded[key] = None
+        if expanded[key] is None:
+            raise EntryError(
+                f"{where}: '{key}' must be a YYYY, YYYY-MM, or YYYY-MM-DD string"
+            )
+    if not isinstance(period_open, bool):
+        raise EntryError(f"{where}: 'period_open' must be a boolean")
+    if period_open and "period_end" in entry:
+        raise EntryError(f"{where}: 'period_open' cannot be combined with 'period_end'")
+    if (
+        "period_open" in entry
+        and not period_open
+        and "period_start" not in entry
+        and "period_end" not in entry
+    ):
+        raise EntryError(f"{where}: period fields record nothing")
+    if (
+        "period_start" in entry
+        and "period_end" in entry
+        and expanded["period_start"] > expanded["period_end"]
+    ):
+        raise EntryError(f"{where}: 'period_start' is after 'period_end'")
+    return start, end, period_open
+
+
+def period_label(dataset):
+    """User-facing period text, or '' when nothing is recorded."""
+    start = dataset["period_start"]
+    end = dataset["period_end"]
+    period_open = dataset["period_open"]
+    if period_open and start:
+        return f"{start} \u2013 present"
+    if period_open:
+        return "ongoing"
+    if start and end:
+        return start if start == end else f"{start} \u2013 {end}"
+    if start:
+        return f"from {start}"
+    if end:
+        return f"until {end}"
+    return ""
+
+
+def temporal_coverage(dataset):
+    """schema.org temporalCoverage, or None when the interval is incomplete."""
+    start = dataset["period_start"]
+    end = dataset["period_end"]
+    if dataset["period_open"] and start:
+        return f"{start}/.."
+    if start and end:
+        return start if start == end else f"{start}/{end}"
+    return None
+
+
 def require_str(entry, key, where, optional=False):
     value = entry.get(key)
     if value is None:
@@ -97,7 +187,10 @@ def load_dataset(path, category_ids):
         raise EntryError(f"{where}: filename must be lowercase kebab-case")
     entry = load_toml(path)
 
-    known = {"name", "category", "tags", "format", "description", "links", "license", "doi", "author"}
+    known = {
+        "name", "category", "tags", "format", "description", "links", "license",
+        "doi", "author", "period_start", "period_end", "period_open",
+    }
     unknown = set(entry) - known
     if unknown:
         raise EntryError(f"{where}: unknown field(s): {', '.join(sorted(unknown))}")
@@ -126,6 +219,7 @@ def load_dataset(path, category_ids):
         )
     if dataset["doi"] and not DOI_RE.match(dataset["doi"]):
         raise EntryError(f"{where}: 'doi' must be a bare DOI like 10.5281/zenodo.123456")
+    dataset["period_start"], dataset["period_end"], dataset["period_open"] = apply_period(entry, where)
 
     tags = entry.get("tags", [])
     if not isinstance(tags, list) or not all(isinstance(t, str) for t in tags):
@@ -224,8 +318,11 @@ def render_dataset_card(d, categories_by_id, root):
     meta = [
         f'<li><span class="label">Category:</span> {e(categories_by_id[d["category"]]["name"])}</li>',
         f'<li><span class="label">Format:</span> {e(format_labels(d))}</li>',
-        f'<li><span class="label">License:</span> {e(d["license"])}</li>',
     ]
+    label = period_label(d)
+    if label:
+        meta.append(f'<li><span class="label">Period:</span> {e(label)}</li>')
+    meta.append(f'<li><span class="label">License:</span> {e(d["license"])}</li>')
     if d["author"]:
         meta.append(f'<li><span class="label">Author:</span> {e(d["author"])}</li>')
     if d["doi"]:
@@ -277,8 +374,11 @@ def render_dataset_page(d, categories_by_id):
     rows = [
         ("Category", f'<a href="{root}#{e(cat["id"])}">{e(cat["name"])}</a>'),
         ("Format", e(format_labels(d))),
-        ("License", e(d["license"])),
     ]
+    label = period_label(d)
+    if label:
+        rows.append(("Period", e(label)))
+    rows.append(("License", e(d["license"])))
     if d["author"]:
         rows.append(("Author", e(d["author"])))
     if d["doi"]:
@@ -378,6 +478,9 @@ def dataset_jsonld(d, categories_by_id):
     }
     if d["author"]:
         out["creator"] = {"@type": "Person", "name": d["author"]}
+    coverage = temporal_coverage(d)
+    if coverage:
+        out["temporalCoverage"] = coverage
     if d["doi"]:
         out["identifier"] = f"https://doi.org/{d['doi']}"
         out["sameAs"] = f"https://doi.org/{d['doi']}"
@@ -416,7 +519,11 @@ def render_llms_txt(datasets, categories):
         out.append(f"## {cat['name']}")
         out.append("")
         for d in members:
-            out.append(f"- [{d['name']}]({dataset_url(d)}): {first_sentence(d['description'])}")
+            line = f"- [{d['name']}]({dataset_url(d)}): {first_sentence(d['description'])}"
+            label = period_label(d)
+            if label:
+                line += f" Period: {label}."
+            out.append(line)
         out.append("")
     out.append("## Optional")
     out.append("")
@@ -433,6 +540,9 @@ def render_llms_full_txt(datasets, categories_by_id):
         out.append(f"URL: {dataset_url(d)}")
         out.append(f"Category: {categories_by_id[d['category']]['name']}")
         out.append(f"Format: {format_labels(d)}")
+        label = period_label(d)
+        if label:
+            out.append(f"Period: {label}")
         if d["tags"]:
             out.append(f"Tags: {', '.join(d['tags'])}")
         out.append(f"License: {d['license']}")
