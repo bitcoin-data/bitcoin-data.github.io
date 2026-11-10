@@ -34,6 +34,9 @@ follow. By hand:
 | `license`     | yes      | Free text, e.g. `CC0 1.0` or `CC0 1.0 (data), MIT (code)`. |
 | `author`      | no       | Person, group or project that publishes the dataset. |
 | `doi`         | no       | Bare DOI like `10.5281/zenodo.22667157`, rendered as a doi.org link. |
+| `period_start` | no      | First time the records are about: `YYYY`, `YYYY-MM`, or `YYYY-MM-DD`. |
+| `period_end`  | no       | Last time the records are about, in the same form. |
+| `period_open` | no       | `true` when the publisher is still extending the series. Leave `period_end` out in that case. |
 
 ### Writing the description
 
@@ -48,6 +51,14 @@ question:
 Descriptions are timeless: no dates, counts, sizes, version numbers, update
 frequencies or status words such as "currently" or "since". Those change, and
 nobody updates them. Describe what the dataset is, not how big it is today.
+Put a date range in `period_start`, `period_end`, and `period_open`, and leave
+those keys out when the dataset's own sources do not state one. Set
+`period_open` only when a source shows the publisher is still adding records,
+and cite that source in the pull request. Block heights alone are not dates.
+When a file stores a raw block header and no time column, `nTime` is the
+uint32 little-endian at byte offset 68 of the 80-byte header: use the earliest
+as the start and, for a closed series, the latest as the end, written as
+`YYYY-MM-DD` UTC.
 
 ### Example
 
