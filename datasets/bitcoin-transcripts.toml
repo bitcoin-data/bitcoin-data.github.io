@@ -4,6 +4,7 @@ tags = ["archive", "bitcoin-core", "history", "meetings"]
 format = ["text"]
 author = "Bitcoin Transcripts contributors"
 license = "MIT"
+period_start = "2014-02-09"
 period_open = true
 description = """
 One Markdown file per transcribed talk, podcast episode or developer meeting,
