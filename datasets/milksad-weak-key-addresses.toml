@@ -1,0 +1,37 @@
+name = "Milk Sad weak key addresses"
+category = "transactions"
+tags = ["addresses", "attribution", "forensics", "mainnet"]
+format = ["text"]
+author = "Milk Sad research team"
+license = "Not specified (the repository states that a license, possibly CC BY 4.0, is still under consideration)"
+description = """
+Bitcoin addresses of wallets whose keys came from a broken random number
+generator or a guessable passphrase, sorted text files, one address per
+line, split by generator and key derivation. The Milk Sad researchers
+brute-force the seed space of each flaw and keep addresses that a bloom filter
+shows were used on-chain. Useful for flagging affected wallets and thefts from
+them; publication is selective, so a missing address proves nothing.
+"""
+
+[[links]]
+type = "repository"
+url = "https://git.distrust.co/milksad/data"
+
+[[links]]
+type = "website"
+url = "https://milksad.info/"
+
+[[links]]
+type = "download"
+label = "main.tar.gz (the whole collection)"
+url = "https://git.distrust.co/milksad/data/archive/main.tar.gz"
+
+[[links]]
+type = "documentation"
+label = "Libbitcoin Explorer CVE-2023-39910 write-up"
+url = "https://milksad.info/disclosure.html"
+
+[[links]]
+type = "other"
+label = "Research updates"
+url = "https://milksad.info/updates.html"
