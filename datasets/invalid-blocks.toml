@@ -4,6 +4,7 @@ tags = ["blocks", "headers", "forks", "consensus", "mainnet"]
 format = ["jsonl", "json", "binary"]
 author = "0xB10C and contributors"
 license = "CC0 1.0 (data), MIT (code)"
+doi = "10.5281/zenodo.24302230"
 period_start = "2010-08-15"
 period_open = true
 description = """
