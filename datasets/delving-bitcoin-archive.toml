@@ -1,0 +1,37 @@
+name = "Delving Bitcoin forum archive"
+category = "development"
+tags = ["bitcoin-core", "forum", "history"]
+format = ["json", "text"]
+author = "James O'Beirne"
+license = "Not specified; forum post text belongs to its authors. MIT (discourse-archive tool)"
+description = """
+A mirror of the Delving Bitcoin research forum: the raw Discourse JSON of
+every post, and a rendered Markdown file per topic holding that thread's posts
+in order, both filed by month. An automated job runs the discourse-archive
+tool against the forum's public API and commits the result. Useful for
+grepping and citing protocol research outside the forum; the export is
+one-way, so the live site stays authoritative.
+"""
+
+[[links]]
+type = "repository"
+url = "https://github.com/jamesob/delving-bitcoin-archive"
+
+[[links]]
+type = "website"
+url = "https://delvingbitcoin.org/"
+
+[[links]]
+type = "download"
+label = "archive/posts/ (raw Discourse post JSON)"
+url = "https://github.com/jamesob/delving-bitcoin-archive/tree/master/archive/posts"
+
+[[links]]
+type = "download"
+label = "archive/rendered-topics/ (Markdown per topic)"
+url = "https://github.com/jamesob/delving-bitcoin-archive/tree/master/archive/rendered-topics"
+
+[[links]]
+type = "documentation"
+label = "discourse-archive tool"
+url = "https://github.com/jamesob/discourse-archive"
