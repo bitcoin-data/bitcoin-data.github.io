@@ -1,0 +1,44 @@
+name = "Lightning client and release line census"
+category = "lightning"
+tags = ["channels", "clients", "gossip", "mainnet", "nodes"]
+format = ["json"]
+author = "Saurabh Kumar (Bitcoin Data Labs)"
+license = "MIT (code and aggregate data)"
+description = """
+Monthly JSON panels of the public Lightning Network split by client
+implementation, with node counts and node and capacity shares, plus companion
+panels on release line adoption, upgrade timing and exposure to security
+advisories. Bitcoin Data Labs infers client and release from the feature bits
+in node announcements in its own gossip snapshots. Good for studying client
+concentration and patch uptake; only aggregates are published, not the gossip.
+"""
+
+[[links]]
+type = "repository"
+label = "ln-client-diversity (client census)"
+url = "https://github.com/bitcoindatalabs/ln-client-diversity"
+
+[[links]]
+type = "repository"
+label = "ln-upgrade-dynamics (release lines)"
+url = "https://github.com/bitcoindatalabs/ln-upgrade-dynamics"
+
+[[links]]
+type = "download"
+label = "client_census_monthly.json"
+url = "https://github.com/bitcoindatalabs/ln-client-diversity/raw/main/data/client_census_monthly.json"
+
+[[links]]
+type = "download"
+label = "ln-upgrade-dynamics data directory"
+url = "https://github.com/bitcoindatalabs/ln-upgrade-dynamics/tree/main/data"
+
+[[links]]
+type = "paper"
+label = "Does Client Diversity Protect the Lightning Network?"
+url = "https://arxiv.org/abs/2610.20952"
+
+[[links]]
+type = "paper"
+label = "Who Patches the Lightning Network?"
+url = "https://arxiv.org/abs/2610.30350"
