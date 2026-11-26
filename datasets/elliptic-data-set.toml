@@ -1,0 +1,39 @@
+name = "Elliptic data set"
+category = "transactions"
+tags = ["forensics", "machine-learning", "mainnet", "transactions"]
+format = ["csv"]
+author = "Elliptic"
+license = "CC BY-NC-ND 4.0"
+description = """
+A Bitcoin transaction graph with one node per transaction and one edge per flow
+of coins, as three CSV files of features, edges and class labels. Elliptic
+mapped the transactions to entities it had identified as licit or illicit, and
+released it with a graph neural network benchmark. Useful as a
+labelled benchmark for illicit-flow detection; ids are anonymised, feature
+meanings are withheld and time is only a step number.
+"""
+
+[[links]]
+type = "website"
+label = "Kaggle dataset page"
+url = "https://www.kaggle.com/datasets/ellipticco/elliptic-data-set"
+
+[[links]]
+type = "download"
+label = "elliptic_txs_features.csv.zip (PyTorch Geometric mirror)"
+url = "https://data.pyg.org/datasets/elliptic/elliptic_txs_features.csv.zip"
+
+[[links]]
+type = "download"
+label = "elliptic_txs_edgelist.csv.zip (PyTorch Geometric mirror)"
+url = "https://data.pyg.org/datasets/elliptic/elliptic_txs_edgelist.csv.zip"
+
+[[links]]
+type = "download"
+label = "elliptic_txs_classes.csv.zip (PyTorch Geometric mirror)"
+url = "https://data.pyg.org/datasets/elliptic/elliptic_txs_classes.csv.zip"
+
+[[links]]
+type = "paper"
+label = "Anti-Money Laundering in Bitcoin: Experimenting with Graph Convolutional Networks for Financial Forensics (KDD 2019 workshop)"
+url = "https://arxiv.org/abs/1908.02591"
