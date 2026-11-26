@@ -1,0 +1,40 @@
+name = "Illicit Bitcoin addresses from HackForums"
+category = "transactions"
+tags = ["addresses", "attribution", "forensics", "mainnet"]
+format = ["csv", "json"]
+author = "Abdoul Nasser Hassane Amadou, Arnaud Legout, Imane Fouad, Konstantin Avrachenkov and Anas Motii (Inria and UM6P)"
+license = "Not specified"
+period_start = "2009-01-03"
+period_end = "2024-09-24"
+description = """
+Bitcoin addresses posted on an underground cybercrime forum, as CSV files
+pairing each address with a cybercrime category and on-chain statistics.
+Researchers extracted them from the CrimeBB HackForums archive, validated them
+on-chain, screened them with local language models and reviewed the flagged
+ones by hand. Useful for building labelled illicit-address models; the labels
+rest on forum context and model screening, so some are wrong.
+"""
+
+[[links]]
+type = "repository"
+url = "https://github.com/osteoner/hackforums-bitcoin-labels"
+
+[[links]]
+type = "download"
+label = "positive_addresses.csv (address and category)"
+url = "https://raw.githubusercontent.com/osteoner/hackforums-bitcoin-labels/main/data/positive_addresses.csv"
+
+[[links]]
+type = "download"
+label = "candidates.csv (all validated addresses with on-chain statistics)"
+url = "https://raw.githubusercontent.com/osteoner/hackforums-bitcoin-labels/main/data/candidates.csv"
+
+[[links]]
+type = "documentation"
+label = "DATA_STATEMENT.md (sources, what is and is not released)"
+url = "https://github.com/osteoner/hackforums-bitcoin-labels/blob/main/DATA_STATEMENT.md"
+
+[[links]]
+type = "paper"
+label = "Extracting and Verifying Illicit Bitcoin Addresses from Underground Forum Discussions (arXiv)"
+url = "https://arxiv.org/abs/2608.13930"
