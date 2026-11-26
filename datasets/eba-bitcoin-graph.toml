@@ -1,0 +1,49 @@
+name = "Temporal graph of Bitcoin transactions (EBA)"
+category = "transactions"
+tags = ["addresses", "machine-learning", "mainnet", "transactions"]
+format = ["text", "binary"]
+author = "Vahid Jalili"
+license = "Not specified for the graph files (pipeline code GPL-3.0; the sampled communities and block statistics are CC BY-NC-SA 4.0)"
+period_start = "2009-01-03"
+period_end = "2024-09-26"
+description = """
+A temporal graph of on-chain fund flows, with script, transaction and block
+nodes joined by typed time-stamped edges, as gzipped TSV files for Neo4j bulk
+import and as a database dump. An ETL pipeline reconstructs it from a full
+node; sampled communities and per-block summary statistics ship alongside.
+Useful for graph machine learning at chain scale; transactions with over twenty
+non-zero input or output scripts and zero-value outputs are excluded.
+"""
+
+[[links]]
+type = "repository"
+url = "https://github.com/B1AAB/EBA"
+
+[[links]]
+type = "website"
+url = "https://eba.b1aab.ai/"
+
+[[links]]
+type = "download"
+label = "Bitcoin Graph v1 release (Neo4j TSV and database dump on AWS S3)"
+url = "https://eba.b1aab.ai/releases/data-release/v1"
+
+[[links]]
+type = "download"
+label = "Sampled communities (Kaggle)"
+url = "https://www.kaggle.com/datasets/aab/bitcoin-graph-sampled-communities"
+
+[[links]]
+type = "download"
+label = "Block summary statistics (Kaggle)"
+url = "https://www.kaggle.com/datasets/aab/bitcoin-block-metadata"
+
+[[links]]
+type = "documentation"
+label = "Neo4j TSV schema"
+url = "https://eba.b1aab.ai/docs/bitcoin/datasets/tsv"
+
+[[links]]
+type = "paper"
+label = "The Temporal Graph of Bitcoin Transactions (NeurIPS 2025 Datasets and Benchmarks Track)"
+url = "https://arxiv.org/abs/2510.20028"
