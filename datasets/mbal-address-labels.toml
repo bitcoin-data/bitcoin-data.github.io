@@ -1,0 +1,25 @@
+name = "MBAL annotated crypto address labels"
+category = "transactions"
+tags = ["addresses", "attribution", "forensics", "mainnet"]
+format = ["csv"]
+author = "Jiahao He, Sen Yang, Yi Dong, Ruiying Jiang, Ziling Pan, Ting Chen, Shuwei Song, Xiapu Luo, Jiachi Chen and Yi Zhang"
+license = "CC0 1.0"
+doi = "10.1016/j.bcra.2026.100555"
+description = """
+Annotated cryptocurrency addresses in a CSV, one row per address with its
+chain, one or more categories, the entity it belongs to where known, and
+whether the label came from ground truth, a heuristic or an external feed. A
+chain column separates Bitcoin mainnet from the other networks covered. Useful
+for attributing addresses to services and entities; how far a label can be
+trusted depends on which source produced it.
+"""
+
+[[links]]
+type = "website"
+label = "Kaggle dataset page"
+url = "https://www.kaggle.com/datasets/yidongchaintoolai/mbal-10m-crypto-address-label-dataset"
+
+[[links]]
+type = "paper"
+label = "MBAL: A 10-Million Annotated Crypto Address Dataset Across Leading Blockchains (Blockchain: Research and Applications)"
+url = "https://doi.org/10.1016/j.bcra.2026.100555"
