@@ -1,0 +1,37 @@
+name = "Bitcoin wallet classification public dataset"
+category = "transactions"
+tags = ["addresses", "attribution", "forensics", "mainnet"]
+format = ["text"]
+author = "Gregory Wilder"
+license = "ODbL 1.0 (database), contents © original authors"
+period_start = "2009-01-03"
+period_end = "2021-05-26"
+description = """
+Bitcoin addresses labelled with one of fourteen service categories, from
+darknet market and tumbler through exchange and mining pool to individual
+wallet. The compiler merged WalletExplorer's wallet identifications, which
+supply most rows, with two research label sets and the OFAC sanctions list,
+preferring WalletExplorer where they disagree. Useful for attributing addresses
+at scale; most labels rest on a service that stopped updating, so coverage
+thins for later blocks.
+"""
+
+[[links]]
+type = "website"
+label = "Kaggle dataset page"
+url = "https://www.kaggle.com/datasets/gregorywilder/bitcoin-wallet-classification-public-dataset"
+
+[[links]]
+type = "other"
+label = "WalletExplorer (the main label source)"
+url = "https://www.walletexplorer.com/info"
+
+[[links]]
+type = "other"
+label = "Bitcoin addresses and their categories (Michalski et al., Harvard Dataverse)"
+url = "https://doi.org/10.7910/DVN/KEWU0N"
+
+[[links]]
+type = "other"
+label = "ofac-sanctioned-digital-currency-addresses (the sanctions source)"
+url = "https://github.com/0xB10C/ofac-sanctioned-digital-currency-addresses"
