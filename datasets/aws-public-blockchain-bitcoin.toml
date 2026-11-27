@@ -1,0 +1,41 @@
+name = "Bitcoin blockchain on AWS"
+category = "transactions"
+tags = ["addresses", "blocks", "mainnet", "transactions"]
+format = ["parquet"]
+author = "Amazon Web Services"
+license = "Not specified for the data; the linked LICENSE covers the example code"
+period_start = "2009-01-03"
+period_open = true
+description = """
+Two tables covering the chain, one row per block and one per transaction with
+inputs and outputs nested, as Parquet partitioned by date. Amazon Web
+Services loads them from a Bitcoin Core node using the bitcoin-etl schema and
+publishes them in a public S3 bucket. Useful for querying the chain with Athena
+or any Parquet reader without running a node; the stated licence covers the
+example code, not the data.
+"""
+
+[[links]]
+type = "website"
+label = "AWS Public Blockchain Data on the Registry of Open Data"
+url = "https://registry.opendata.aws/aws-public-blockchain/"
+
+[[links]]
+type = "download"
+label = "Browse the bucket (s3://aws-public-blockchain/v1.0/btc/)"
+url = "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/index.html"
+
+[[links]]
+type = "documentation"
+label = "Bitcoin table and field schema"
+url = "https://github.com/aws-samples/digital-assets-examples/blob/main/analytics/consumer/schema/btc.md"
+
+[[links]]
+type = "documentation"
+label = "Analytics examples and notebooks"
+url = "https://github.com/aws-samples/digital-assets-examples/tree/main/analytics"
+
+[[links]]
+type = "other"
+label = "bitcoin-etl (the schema this follows)"
+url = "https://github.com/blockchain-etl/bitcoin-etl"
