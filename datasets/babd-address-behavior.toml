@@ -1,0 +1,43 @@
+name = "Bitcoin address behavior dataset (BABD-13)"
+category = "transactions"
+tags = ["addresses", "attribution", "machine-learning", "mainnet"]
+format = ["csv", "json"]
+author = "Yuexin Xiang, Yuchen Lei, Ding Bao, Tiantian Li, Qingqing Yang, Wenmao Liu, Wei Ren and Kim-Kwang Raymond Choo"
+license = "CC BY-NC-ND 4.0"
+doi = "10.1109/TIFS.2023.3347894"
+period_start = "2019-07-12"
+period_end = "2021-05-26"
+description = """
+One row per labelled Bitcoin address in a CSV, giving the address, a numeric
+class from thirteen behaviour types such as exchange, darknet market, tumbler
+and Ponzi scheme, plus statistical and structural features. The authors built a
+transaction graph from ledger data and computed the features for addresses
+labelled by WalletExplorer. Useful for training address classifiers; labels come
+from a third-party service and the licence bars commercial use and
+derivatives.
+"""
+
+[[links]]
+type = "repository"
+label = "BABD construction code"
+url = "https://github.com/Y-Xiang-hub/Bitcoin-Address-Behavior-Analysis"
+
+[[links]]
+type = "website"
+label = "Kaggle dataset page"
+url = "https://www.kaggle.com/datasets/lemonx/babd13"
+
+[[links]]
+type = "documentation"
+label = "csv_format.yml (feature column names)"
+url = "https://github.com/Y-Xiang-hub/Bitcoin-Address-Behavior-Analysis/blob/main/format/csv_format.yml"
+
+[[links]]
+type = "paper"
+label = "BABD: A Bitcoin Address Behavior Dataset for Pattern Analysis (IEEE TIFS)"
+url = "https://doi.org/10.1109/TIFS.2023.3347894"
+
+[[links]]
+type = "paper"
+label = "Preprint (arXiv)"
+url = "https://arxiv.org/abs/2204.05746"
