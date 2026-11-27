@@ -1,0 +1,26 @@
+name = "MempoolScape Bitcoin mempool logs"
+category = "transactions"
+tags = ["mempool", "mainnet", "timestamps", "transactions"]
+format = ["json"]
+author = "Haseeb Saeed and the Blockchain lab at SEECS, National University of Sciences and Technology"
+license = "CC BY-SA 4.0"
+period_start = "2020-12"
+period_end = "2021-02"
+description = """
+Mempool entry and exit records from instrumented Bitcoin Core nodes, as JSON
+logs with one record per transaction entering the mempool and one per
+transaction leaving it. A university blockchain lab patched Bitcoin Core to
+write the two logs and derived the published fields from them. Useful for
+reconstructing mempool state and replaying it; the view is that of the
+operators' own nodes, not the whole network.
+"""
+
+[[links]]
+type = "website"
+label = "Kaggle dataset page"
+url = "https://www.kaggle.com/datasets/itshaseebsaeed/bitcoin-mempool-state-data"
+
+[[links]]
+type = "paper"
+label = "Exploring MempoolScape: Bitcoin Mempool Logs Dataset Dec'20-Feb'21 (ResearchGate)"
+url = "https://www.researchgate.net/publication/375060984"
