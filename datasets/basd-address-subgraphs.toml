@@ -1,0 +1,40 @@
+name = "Bitcoin address subgraph dataset (BASD-8)"
+category = "transactions"
+tags = ["addresses", "attribution", "machine-learning", "mainnet"]
+format = ["csv", "text"]
+author = "Yuexin Xiang, Tiantian Li and Yuquan Li"
+doi = "10.1109/BigData55660.2022.10020980"
+license = "CC BY-NC-ND 4.0"
+description = """
+Transaction subgraphs around labelled Bitcoin addresses, covering eight
+behaviour types such as darknet market, exchange, gambling, tumbler and Ponzi
+scheme. The authors extracted each subgraph from a transaction graph they built
+from ledger data, and also publish a compact text rendering of the subgraphs
+meant for language models. Useful for structure-based address classification;
+the licence bars commercial use and derivatives.
+"""
+
+[[links]]
+type = "repository"
+label = "Construction code (shared with BABD)"
+url = "https://github.com/Y-Xiang-hub/Bitcoin-Address-Behavior-Analysis"
+
+[[links]]
+type = "website"
+label = "Kaggle dataset page"
+url = "https://www.kaggle.com/datasets/lemonx/basd8"
+
+[[links]]
+type = "repository"
+label = "LLM4TG (text rendering of the subgraphs)"
+url = "https://github.com/yuchen-lei/llm4tg"
+
+[[links]]
+type = "paper"
+label = "Leveraging Subgraph Structure for Exploration and Analysis of Bitcoin Address (IEEE BigData 2022)"
+url = "https://doi.org/10.1109/BigData55660.2022.10020980"
+
+[[links]]
+type = "paper"
+label = "Large Language Models for Cryptocurrency Transaction Analysis: A Bitcoin Case Study (arXiv)"
+url = "https://arxiv.org/abs/2501.18158"
